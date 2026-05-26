@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rana Enterprises Products - PVC wall panels, WPC louvers, luxury vinyl flooring, ceiling solutions, and more premium interior materials.">
+  
+  <title>Products - Rana Enterprises</title>
+  
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    .search-input {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      transition: all 0.3s;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 10px rgba(30, 58, 95, 0.2);
+    }
+    
+    body.dark-mode .search-input {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+    
+    body.dark-mode .search-input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    body.dark-mode .spec-table {
+      background: var(--secondary-dark);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .spec-table th {
+      background: var(--accent-blue);
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 700;
+    }
+    
+    .spec-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    body.dark-mode .spec-table td {
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .spec-table tr:hover {
+      background: #f9f9f9;
+    }
+    
+    body.dark-mode .spec-table tr:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress"></div>
+
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="index.html" class="navbar-logo">
+        <i class="fas fa-building"></i> Rana Enterprises
+      </a>
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="tel:+919876543210" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">
+          <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://wa.me/919876543210" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="contact.html" class="btn btn-gold" style="padding: 8px 16px; font-size: 0.9rem;">Quote</a>
+        <button class="mode-toggle">🌙</button>
+        <button class="navbar-toggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" style="margin-top: 70px; height: auto; padding: 4rem 0; background: linear-gradient(135deg, var(--accent-blue), var(--primary-dark));">
+    <div class="hero-content" style="max-width: 100%;">
+      <h1 style="margin: 0; color: white;">Our Products</h1>
+      <p style="color: rgba(255, 255, 255, 0.9); margin: 1rem 0;">Premium Materials & Solutions</p>
+    </div>
+  </section>
+
+  <section class="featured-products" style="padding: 5rem 0;">
+    <div class="container">
+      <h2 class="section-title text-center">Product Catalog</h2>
+      <p class="section-subtitle text-center">Browse our comprehensive range of premium interior materials</p>
+      
+      <!-- Search Bar -->
+      <input type="text" class="search-input" placeholder="Search products by name or category...">
+      
+      <!-- Filter Buttons -->
+      <div class="project-filters" style="margin-bottom: 2rem;">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="wall">Wall Panels</button>
+        <button class="filter-btn" data-filter="ceiling">Ceiling</button>
+        <button class="filter-btn" data-filter="flooring">Flooring</button>
+      </div>
+
+      <!-- Wall Panel Products -->
+      <div class="products-grid">
+        <!-- Standard PVC Panel -->
+        <div class="product-card" data-category="wall">
+          <div class="product-image" style="background: linear-gradient(135deg, #e8d4a0, #f5e6d3);">
+            <svg viewBox="0 0 300 250" style="width: 100%; height: 100%;">
+              <rect fill="#e8d4a0" width="300" height="250"/>
+              <text x="150" y="125" font-size="20" fill="#666" text-anchor="middle" dominant-baseline="middle">Standard PVC Panel</text>
+            </svg>
+            <span class="product-badge">Popular</span>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Wall Panels</div>
+            <h3 class="product-title">Standard PVC Wall Panels</h3>
+            <p class="product-description">Hollow-core lightweight panels ideal for residential applications</p>
+            <div class="product-features">
+              <span class="feature-tag">10-12"</span>
+              <span class="feature-tag">5-10mm</span>
+              <span class="feature-tag">Waterproof</span>
+            </div>
+            <div style="background: rgba(30, 58, 95, 0.05); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.9rem;">
+              <strong>Price Range:</strong> ₹20 - ₹65 / sq. ft.
+            </div>
+            <div class="product-actions">
+              <button class="view-details" data-modal="modal-pvc-standard">Specifications</button>
+              <button class="request-quote whatsapp-btn" data-product="Standard PVC Panels">Quote</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- WPC Fluted Louvers -->
+        <div class="product-card" data-category="wall">
+          <div class="product-image" style="background: linear-gradient(135deg, #d4b896, #e8cdb8);">
+            <svg viewBox="0 0 300 250" style="width: 100%; height: 100%;">
+              <rect fill="#d4b896" width="300" height="250"/>
+              <text x="150" y="125" font-size="20" fill="#666" text-anchor="middle" dominant-baseline="middle">WPC Fluted Louvers</text>
+            </svg>
+            <span class="product-badge">Best Seller</span>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Wall Panels</div>
+            <h3 class="product-title">WPC Fluted Louvers</h3>
+            <p class="product-description">Premium wood-plastic composite with 3D texture design</p>
+            <div class="product-features">
+              <span class="feature-tag">6"</span>
+              <span class="feature-tag">12-24mm</span>
+              <span class="feature-tag">3D Design</span>
+            </div>
+            <div style="background: rgba(30, 58, 95, 0.05); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.9rem;">
+              <strong>Price Range:</strong> ₹80 - ₹350 / sq. ft.
+            </div>
+            <div class="product-actions">
+              <button class="view-details" data-modal="modal-wpc-fluted">Specifications</button>
+              <button class="request-quote whatsapp-btn" data-product="WPC Fluted Louvers">Quote</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- UV Marble Sheets -->
+        <div class="product-card" data-category="wall">
+          <div class="product-image" style="background: linear-gradient(135deg, #e8d7c3, #f5ead9);">
+            <svg viewBox="0 0 300 250" style="width: 100%; height: 100%;">
+              <rect fill="#e8d7c3" width="300" height="250"/>
+              <text x="150" y="125" font-size="20" fill="#666" text-anchor="middle" dominant-baseline="middle">UV Marble Sheets</text>
+            </svg>
+            <span class="product-badge">Luxury</span>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Wall Panels</div>
+            <h3 class="product-title">UV Marble PVC Sheets</h3>
+            <p class="product-description">Stone-like finish with UV protective coating and seamless design</p>
+            <div class="product-features">
+              <span class="feature-tag">4'x8'</span>
+              <span class="feature-tag">3-5mm</span>
+              <span class="feature-tag">Seamless</span>
+            </div>
+            <div style="background: rgba(30, 58, 95, 0.05); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.9rem;">
+              <strong>Price Range:</strong> ₹60 - ₹150 / sq. ft.
+            </div>
+            <div class="product-actions">
+              <button class="view-details" data-modal="modal-uv-marble">Specifications</button>
+              <button class="request-quote whatsapp-btn" data-product="UV Marble Sheets">Quote</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charcoal Louvers -->
+        <div class="product-card" data-category="wall">
+          <div class="product-image" style="background: linear-gradient(135deg, #9d8d7e, #b5a594);">
+            <svg viewBox="0 0 300 250" style="width: 100%; height: 100%;">
+              <rect fill="#9d8d7e" width="300" height="250"/>
+              <text x="150" y="125" font-size="20" fill="#fff" text-anchor="middle" dominant-baseline="middle">Charcoal Louvers</text>
+            </svg>
+            <span class="product-badge">Eco-Friendly</span>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Wall Panels</div>
+            <h3 class="product-title">Charcoal Louvers</h3>
+            <p class="product-description">Eco-friendly bamboo charcoal panels with moisture absorption</p>
+            <div class="product-features">
+              <span class="feature-tag">Eco-Friendly</span>
+              <span class="feature-tag">Matte Finish</span>
+              <span class="feature-tag">Charcoal</span>
+            </div>
+            <div style="background: rgba(30, 58, 95, 0.05); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.9rem;">
+              <strong>Price Range:</strong> ₹100 - ₹200 / sq. ft.
+            </div>
+            <div class="product-actions">
+              <button class="view-details" data-modal="modal-charcoal">Specifications</button>
+              <button class="request-quote whatsapp-btn" data-product="Charcoal Louvers">Quote</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PVC Grid Ceiling -->
+        <div class="product-card" data-category="ceiling">
+          <div class="product-image" style="background: linear-gradient(135deg, #e0e0e0, #f5f5f5);">
+            <svg viewBox="0 0 300 250" style="width: 100%; height: 100%;">
+              <rect fill="#e0e0e0" width="300" height="250"/>
+              <text x="150" y="125" font-size="20" fill="#666" text-anchor="middle" dominant-baseline="middle">PVC Grid Ceiling</text>
+            </svg>
+            <span class="product-badge">Commercial</span>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Ceiling</div>
+            <h3 class="product-title">PVC Grid Ceiling</h3>
+            <p class="product-description">Drop ceiling solution for commercial and office spaces</p>
+            <div class="product-features">
+              <span class="feature-tag">12"</span>
+              <span class="feature-tag">8-10mm</span>
+              <span class="feature-tag">Grid Design</span>
+            </div>
+            <div style="background: rgba(30, 58, 95, 0.05); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.9rem;">
+              <strong>Price Range:</strong> ₹75 - ₹90 / sq. ft.
+            </div>
+            <div class="product-actions">
+              <button class="view-details" data-modal="modal-grid-ceiling">Specifications</button>
+              <button class="request-quote whatsapp-btn" data-product="PVC Grid Ceiling">Quote</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seamless Interlocking Ceiling -->
+        <div class="product-card" data-category="ceiling">
+          <div class="product-image" style="background: linear-gradient(135deg, #d4d4d4, #e8e8e8);">
+            <svg viewBox="0 0 300 250" style="width: 100%; height: 100%;">
+              <rect fill="#d4d4d4" width="300" height="250"/>
+              <text x="150" y="125" font-size="20" fill="#666" text-anchor="middle" dominant-baseline="middle">Interlocking Ceiling</text>
+            </svg>
+            <span class="product-badge">Residential</span>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Ceiling</div>
+            <h3 class="product-title">Seamless Interlocking Ceiling</h3>
+            <p class="product-description">Continuous reflective surface, perfect for bathrooms and kitchens</p>
+            <div class="product-features">
+              <span class="feature-tag">Seamless</span>
+              <span class="feature-tag">Waterproof</span>
+              <span class="feature-tag">Reflective</span>
+            </div>
+            <div style="background: rgba(30, 58, 95, 0.05); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.9rem;">
+              <strong>Price Range:</strong> ₹80 - ₹100 / sq. ft.
+            </div>
+            <div class="product-actions">
+              <button class="view-details" data-modal="modal-interlocking">Specifications</button>
+              <button class="request-quote whatsapp-btn" data-product="Seamless Ceiling">Quote</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Luxury Vinyl Flooring -->
+        <div class="product-card" data-category="flooring">
+          <div class="product-image" style="background: linear-gradient(135deg, #d2a679, #e8b896);">
+            <svg viewBox="0 0 300 250" style="width: 100%; height: 100%;">
+              <rect fill="#d2a679" width="300" height="250"/>
+              <text x="150" y="125" font-size="20" fill="#fff" text-anchor="middle" dominant-baseline="middle">Luxury Vinyl</text>
+            </svg>
+            <span class="product-badge">Popular</span>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Flooring</div>
+            <h3 class="product-title">Luxury Vinyl Tiles (LVT)</h3>
+            <p class="product-description">Premium interlocking planks with realistic wood grain effect</p>
+            <div class="product-features">
+              <span class="feature-tag">4-6mm</span>
+              <span class="feature-tag">Anti-Slip</span>
+              <span class="feature-tag">Premium</span>
+            </div>
+            <div style="background: rgba(30, 58, 95, 0.05); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.9rem;">
+              <strong>Price Range:</strong> ₹55 - ₹100+ / sq. ft.
+            </div>
+            <div class="product-actions">
+              <button class="view-details" data-modal="modal-lvt">Specifications</button>
+              <button class="request-quote whatsapp-btn" data-product="Luxury Vinyl Tiles">Quote</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PVC Vinyl Roll Flooring -->
+        <div class="product-card" data-category="flooring">
+          <div class="product-image" style="background: linear-gradient(135deg, #c2a070, #d8b896);">
+            <svg viewBox="0 0 300 250" style="width: 100%; height: 100%;">
+              <rect fill="#c2a070" width="300" height="250"/>
+              <text x="150" y="125" font-size="20" fill="#fff" text-anchor="middle" dominant-baseline="middle">PVC Roll Flooring</text>
+            </svg>
+            <span class="product-badge">Budget-Friendly</span>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Flooring</div>
+            <h3 class="product-title">PVC Vinyl Roll Flooring</h3>
+            <p class="product-description">Continuous sheet flooring with excellent water resistance</p>
+            <div class="product-features">
+              <span class="feature-tag">2m rolls</span>
+              <span class="feature-tag">1-1.5mm</span>
+              <span class="feature-tag">Hygienic</span>
+            </div>
+            <div style="background: rgba(30, 58, 95, 0.05); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.9rem;">
+              <strong>Price Range:</strong> ₹20 - ₹45 / sq. ft.
+            </div>
+            <div class="product-actions">
+              <button class="view-details" data-modal="modal-pvc-roll">Specifications</button>
+              <button class="request-quote whatsapp-btn" data-product="PVC Roll Flooring">Quote</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Info Section -->
+      <div style="background: var(--glass-bg); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-radius: 15px; padding: 3rem; margin-top: 4rem;">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Material Specifications Guide</h2>
+        
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Product Category</th>
+              <th>Material Composition</th>
+              <th>Standard Dimensions</th>
+              <th>Typical Thickness</th>
+              <th>Key Properties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Standard PVC Panels</strong></td>
+              <td>100% Virgin/Recycled PVC</td>
+              <td>10 x 9.5 - 12 feet</td>
+              <td>5-10mm</td>
+              <td>Waterproof, Fire Retardant, Lightweight</td>
+            </tr>
+            <tr>
+              <td><strong>WPC Fluted Panels</strong></td>
+              <td>Wood Polymer Composite</td>
+              <td>6 x 9.5 feet (Standard)</td>
+              <td>12-24mm</td>
+              <td>3D Texture, Impact Resistant, Acoustic</td>
+            </tr>
+            <tr>
+              <td><strong>UV Marble Sheets</strong></td>
+              <td>PVC with UV Coating</td>
+              <td>4 x 8 feet</td>
+              <td>3-5mm</td>
+              <td>Seamless, Scratch-Resistant, High Gloss</td>
+            </tr>
+            <tr>
+              <td><strong>PVC Grid Ceiling</strong></td>
+              <td>High-Density PVC</td>
+              <td>12 x 10-12 feet</td>
+              <td>8-10mm</td>
+              <td>Moisture Proof, Easy Access, Thermal Insulation</td>
+            </tr>
+            <tr>
+              <td><strong>Luxury Vinyl Tiles</strong></td>
+              <td>PVC with Rigid Core</td>
+              <td>Interlocking Planks</td>
+              <td>4-6mm</td>
+              <td>Durable, Anti-Slip, Premium Finish</td>
+            </tr>
+            <tr>
+              <td><strong>PVC Vinyl Roll</strong></td>
+              <td>100% PVC</td>
+              <td>2m wide rolls (up to 25m)</td>
+              <td>1-1.5mm</td>
+              <td>Water Resistant, Hygienic, Economical</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-cta">
+    <div class="container">
+      <h2>Need Custom Solutions?</h2>
+      <p>Contact our team for bulk orders, custom designs, and special pricing</p>
+      <a href="contact.html" class="btn btn-gold">Request a Quote</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Rana Enterprises</h3>
+          <p>Premium interior solutions and building materials provider specializing in PVC panels, WPC louvers, and turnkey interior services.</p>
+          <div class="social-links">
+            <a href="https://facebook.com/ranaenterprises" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/ranaenterprises" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/ranaenterprises" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="https://linkedin.com/company/ranaenterprises" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="#wall">Wall Panels</a></li>
+            <li><a href="#ceiling">Ceiling Solutions</a></li>
+            <li><a href="#flooring">Flooring Systems</a></li>
+            <li><a href="#coating">Wall Coverings</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <div class="footer-contact-info">
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <p><strong>Mumbai Office</strong></p>
+                <p>123 Business Avenue, Mumbai 400001</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div>
+                <p><a href="tel:+919876543210">+91-9876-543-210</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <div>
+                <p><a href="mailto:info@ranaenterprises.com">info@ranaenterprises.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Rana Enterprises. All rights reserved. | GST Registration: 27AABCT1234J1Z5</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-buttons">
+    <a href="https://wa.me/919876543210" class="fab fab-whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919876543210" class="fab fab-phone"><i class="fas fa-phone"></i></a>
+    <a href="contact.html" class="fab fab-quote"><i class="fas fa-quote-left"></i></a>
+    <button class="fab fab-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+  </div>
+  <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
