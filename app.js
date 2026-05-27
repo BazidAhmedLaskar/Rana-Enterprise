@@ -2,7 +2,7 @@
    DATA
 ==========================================*/
 const PRODUCTS = [
-  { id:1, name:'3D PVC Sheet', category:'wall', material:'pvc', application:'residential', img:'https://images.unsplash.com/photo-1615800098779-1be32e60cca3?w=400&q=80&auto=format', features:['3D Textured Surface','Waterproof','Impact Resistant','Easy Installation'] },
+  { id:1, name:'3D Customized Wallpaper', category:'wall', material:'pvc', application:'residential', img:'https://images.unsplash.com/photo-1615800098779-1be32e60cca3?w=400&q=80&auto=format', features:['3D Textured Surface','Waterproof','Impact Resistant','Easy Installation'] },
   { id:2, name:'Charcoal Panel (128-160 MM)', category:'wall', material:'wpc', application:'residential', img:'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80&auto=format', features:['Deep Matte Finish','Eco-Friendly','Charcoal Coating','Premium Quality'] },
   { id:3, name:'Charcoal Panels (300 MM)', category:'wall', material:'wpc', application:'residential', img:'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80&auto=format', features:['Wide 300mm Profile','Modern Look','Durable','Easy Maintenance'] },
   { id:4, name:'Fluted Panel', category:'wall', material:'wpc', application:'residential', img:'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&q=80&auto=format', features:['3D Fluted Texture','Acoustic Properties','Impact Resistant','Lightweight'] },
