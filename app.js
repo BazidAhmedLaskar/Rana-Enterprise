@@ -76,7 +76,7 @@ function productCard(p) {
 }
 
 function viewProduct(name) { alert(`📦 ${name}\nFull specification page coming soon. Please WhatsApp or call us for detailed specs and availability.`); }
-function quoteProduct(name) { window.open(`https://wa.me/91XXXXXXXXXX?text=Hi+Rana+Enterprises%2C+I+would+like+a+quote+for:+${encodeURIComponent(name)}`,'_blank'); }
+function quoteProduct(name) { window.open(`https://wa.me/919265211720?text=Hi+Rana+Enterprises%2C+I+would+like+a+quote+for:+${encodeURIComponent(name)}`,'_blank'); }
 
 /* ==========================================
    FILTER & SORT
@@ -256,3 +256,94 @@ function initAOS() {
     observer.observe(el);
   });
 }
+
+/* ==========================================
+   GLASS FILM SLIDESHOW
+==========================================*/
+let slideIndex = 1;
+let slideInterval;
+
+function changeSlide(n) {
+  clearInterval(slideInterval);
+  showSlides(slideIndex += n);
+  startAutoSlide();
+}
+
+function currentSlide(n) {
+  clearInterval(slideInterval);
+  showSlides(slideIndex = n);
+  startAutoSlide();
+}
+
+function showSlides(n) {
+  const slides = document.querySelectorAll('.glass-film-slide');
+  const dots = document.querySelectorAll('.dot');
+  
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+  
+  slides.forEach(slide => slide.classList.remove('fade'));
+  slides.forEach(slide => slide.style.display = 'none');
+  
+  dots.forEach(dot => dot.style.background = 'rgba(255,255,255,0.3)');
+  
+  if (slides[slideIndex - 1]) {
+    slides[slideIndex - 1].style.display = 'block';
+    slides[slideIndex - 1].classList.add('fade');
+  }
+  if (dots[slideIndex - 1]) {
+    dots[slideIndex - 1].style.background = 'var(--gold)';
+  }
+}
+
+function startAutoSlide() {
+  slideInterval = setInterval(() => {
+    slideIndex++;
+    showSlides(slideIndex);
+  }, 5000);
+}
+
+// Start slideshow on page load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startAutoSlide);
+} else {
+  startAutoSlide();
+}
+
+/* ==========================================
+   IMAGE ZOOM
+==========================================*/
+function openZoom(imageSrc) {
+  let modal = document.getElementById('zoom-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'zoom-modal';
+    modal.className = 'zoom-modal';
+    modal.innerHTML = '<span class="close-zoom" onclick="closeZoom()">&times;</span><img src="">';
+    document.body.appendChild(modal);
+  }
+  modal.querySelector('img').src = imageSrc;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeZoom() {
+  const modal = document.getElementById('zoom-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+// Close zoom on escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeZoom();
+});
+
+// Close zoom when clicking outside image
+document.addEventListener('click', (e) => {
+  const modal = document.getElementById('zoom-modal');
+  if (modal && e.target === modal) {
+    closeZoom();
+  }
+});

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rana Enterprises | Our Projects</title>
+<meta name="description" content="Rana Enterprises – Explore our completed projects. Premium PVC wall panels, WPC louvers, luxury vinyl flooring installations across India.">
+<meta property="og:title" content="Rana Enterprises | Projects & Portfolio">
+<meta property="og:description" content="Discover 1000+ completed interior projects featuring premium PVC, WPC, and flooring solutions.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rana Enterprises | Projects & Portfolio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Rana Enterprises",
+  "description": "Premium PVC wall panels, WPC louvers, flooring systems, and turnkey interior solutions.",
+  "telephone": "+91-92652-11720",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IN"
+  },
+  "openingHours": "Mo-Sa 09:00-19:00",
+  "sameAs": ["https://www.facebook.com/ranaenterprises","https://www.instagram.com/ranaenterprises"]
+}
+</script>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<div id="loader">
+  <div class="loader-logo">Rana Enterprises</div>
+  <div class="loader-line"><div class="loader-line-fill"></div></div>
+</div>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon"><i class="fas fa-border-all"></i></div>
+    Rana <span>Enterprises</span>
+  </a>
+  <div class="nav-menu" id="nav-menu">
+    <a href="index.html" data-page="home">Home</a>
+    <a href="about.html" data-page="about">About Us</a>
+    <a href="projects.html" data-page="projects">Projects</a>
+    <a href="products.html" data-page="products-page">Products</a>
+    <a href="contact.html" data-page="contact">Contact</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav><div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="about.html" onclick="closeMobile()">About Us</a>
+  <a href="projects.html" onclick="closeMobile()">Projects</a>
+  <a href="products.html" onclick="closeMobile()">Products</a>
+  <a href="contact.html" onclick="closeMobile()">Contact</a>
+  </div>
+<div style="height:72px;background:var(--deep-blue)"></div>
+
+  <!-- HERO -->
+  <section id="projects-hero" style="background:linear-gradient(135deg,rgba(28,42,71,0.8),rgba(201,168,76,0.1)),url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80&auto=format');background-size:cover;background-position:center;padding:100px 20px;text-align:center;color:white">
+    <div class="container">
+      <div class="section-label" style="justify-content:center;color:var(--gold)">Our Work</div>
+      <h1 class="hero-title" style="margin-top:16px">1000+ Completed <em>Interior Projects</em></h1>
+      <p class="hero-subtitle" style="margin-top:12px">From residential apartments to corporate offices, discover our portfolio of premium interior transformations across India.</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS FILTER & GRID -->
+  <section class="section-pad" style="background:rgba(255,255,255,0.02)">
+    <div class="container">
+      <div style="display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;justify-content:center">
+        <button class="tab-btn active" onclick="filterProjects(this, 'all')">All Projects</button>
+        <button class="tab-btn" onclick="filterProjects(this, 'residential')">Residential</button>
+        <button class="tab-btn" onclick="filterProjects(this, 'commercial')">Commercial</button>
+        <button class="tab-btn" onclick="filterProjects(this, 'office')">Offices</button>
+        <button class="tab-btn" onclick="filterProjects(this, 'showroom')">Showrooms</button>
+      </div>
+      <div id="projects-masonry" class="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- FEATURED LOCATIONS -->
+  <section class="section-pad">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:60px">
+        <div class="section-label" style="justify-content:center">Where We Worked</div>
+        <h2 class="section-title">Our Project <em>Locations</em></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+        <!-- Location 1 -->
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.2);border-radius:12px;overflow:hidden;transition:all 0.3s ease">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80&auto=format" alt="Delhi Projects" style="width:100%;height:200px;object-fit:cover">
+          <div style="padding:24px">
+            <h3 style="font-size:1.3rem;margin-bottom:8px;color:var(--gold)"><i class="fas fa-map-marker-alt" style="margin-right:8px"></i>Delhi NCR</h3>
+            <p style="color:rgba(248,244,238,0.7);font-size:0.95rem;margin-bottom:16px">250+ residential and commercial projects including luxury apartments, corporate offices, and retail showrooms.</p>
+            <a href="tel:+919265211720" style="color:var(--gold);text-decoration:none;font-weight:600"><i class="fas fa-phone"></i> +91 92652 11720</a>
+          </div>
+        </div>
+
+        <!-- Location 2 -->
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.2);border-radius:12px;overflow:hidden;transition:all 0.3s ease">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80&auto=format" alt="Bangalore Projects" style="width:100%;height:200px;object-fit:cover">
+          <div style="padding:24px">
+            <h3 style="font-size:1.3rem;margin-bottom:8px;color:var(--gold)"><i class="fas fa-map-marker-alt" style="margin-right:8px"></i>Bangalore</h3>
+            <p style="color:rgba(248,244,238,0.7);font-size:0.95rem;margin-bottom:16px">180+ tech startup offices, premium residences, and modern commercial spaces with cutting-edge interior finishes.</p>
+            <a href="tel:+919265211720" style="color:var(--gold);text-decoration:none;font-weight:600"><i class="fas fa-phone"></i> +91 92652 11720</a>
+          </div>
+        </div>
+
+        <!-- Location 3 -->
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.2);border-radius:12px;overflow:hidden;transition:all 0.3s ease">
+          <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&q=80&auto=format" alt="Mumbai Projects" style="width:100%;height:200px;object-fit:cover">
+          <div style="padding:24px">
+            <h3 style="font-size:1.3rem;margin-bottom:8px;color:var(--gold)"><i class="fas fa-map-marker-alt" style="margin-right:8px"></i>Mumbai</h3>
+            <p style="color:rgba(248,244,238,0.7);font-size:0.95rem;margin-bottom:16px">320+ luxury apartments, penthouses, clinics, and retail spaces transforming urban interiors with premium finishes.</p>
+            <a href="tel:+919265211720" style="color:var(--gold);text-decoration:none;font-weight:600"><i class="fas fa-phone"></i> +91 92652 11720</a>
+          </div>
+        </div>
+
+        <!-- Location 4 -->
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.2);border-radius:12px;overflow:hidden;transition:all 0.3s ease">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80&auto=format" alt="Pan India Projects" style="width:100%;height:200px;object-fit:cover">
+          <div style="padding:24px">
+            <h3 style="font-size:1.3rem;margin-bottom:8px;color:var(--gold)"><i class="fas fa-map-marker-alt" style="margin-right:8px"></i>Pan India</h3>
+            <p style="color:rgba(248,244,238,0.7);font-size:0.95rem;margin-bottom:16px">250+ projects across various cities including Hyderabad, Chennai, Pune, and other metros with diverse architectural styles.</p>
+            <a href="tel:+919265211720" style="color:var(--gold);text-decoration:none;font-weight:600"><i class="fas fa-phone"></i> +91 92652 11720</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT STATS -->
+  <section class="section-pad" style="background:linear-gradient(135deg,rgba(201,168,76,0.1),rgba(28,42,71,0.5))">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center">
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);line-height:1" class="counter" data-target="1000">0</div>
+          <div style="font-size:0.95rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:8px">Projects Completed</div>
+        </div>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);line-height:1" class="counter" data-target="500">0</div>
+          <div style="font-size:0.95rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:8px">Happy Clients</div>
+        </div>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);line-height:1" class="counter" data-target="10">0</div>
+          <div style="font-size:0.95rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:8px">Years Experience</div>
+        </div>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);line-height:1">10+</div>
+          <div style="font-size:0.95rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:8px">Cities Across India</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT INQUIRY CTA -->
+  <section class="section-pad">
+    <div class="container" style="text-align:center">
+      <h2 class="section-title" style="margin-bottom:24px">Ready to Start Your <em>Interior Project?</em></h2>
+      <p style="font-size:1.05rem;color:rgba(248,244,238,0.8);margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto">Get inspired by our portfolio or let us help you create your dream interior. Contact us today for a consultation.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="contact.html" class="btn-primary"><i class="fas fa-envelope"></i> Request Quote</a>
+        <a href="https://wa.me/919265211720?text=Hi+Rana+Enterprises%2C+I+am+interested+in+your+interior+services." class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        <a href="tel:+919265211720" class="btn-outline"><i class="fas fa-phone"></i> Call Now</a>
+      </div>
+    </div>
+  </section>
+
+<div class="floating-buttons">
+  <a href="https://wa.me/919265211720" class="floating-btn floating-btn-whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+919265211720" class="floating-btn floating-btn-call" title="Call"><i class="fas fa-phone"></i></a>
+  <a href="contact.html" class="floating-btn floating-btn-quote" title="Get Quote"><i class="fas fa-envelope"></i></a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><div class="nav-logo-icon"><i class="fas fa-border-all"></i></div>Rana <span>Enterprises</span></div>
+          <p class="footer-tagline">Premium PVC wall panels, WPC louvers, luxury vinyl flooring and complete turnkey interior solutions. Waterproof. Termite-proof. Built to last.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="projects.html">Projects</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <div class="footer-links">
+            <a href="#">PVC Wall Panels</a>
+            <a href="#">WPC Fluted Louvers</a>
+            <a href="#">UV Marble Sheets</a>
+            <a href="#">Luxury Vinyl Flooring</a>
+            <a href="#">Charcoal Panels</a>
+            <a href="#">PVC Ceilings</a>
+            <a href="#">Roller Blinds</a>
+            <a href="#">Artificial Grass</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p style="font-size:0.83rem;color:rgba(248,244,238,0.5);line-height:1.6;margin-bottom:16px">Get exclusive design inspiration, product launches, and pricing updates.</p>
+          <div class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Your email">
+            <button class="newsletter-btn"><i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div style="margin-top:24px">
+            <p style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">GST Registered | Quality Assured</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span style="padding:4px 10px;background:rgba(255,255,255,0.05);border-radius:3px;font-size:0.68rem;color:var(--text-muted)">100% Waterproof</span>
+              <span style="padding:4px 10px;background:rgba(255,255,255,0.05);border-radius:3px;font-size:0.68rem;color:var(--text-muted)">Fire Retardant</span>
+              <span style="padding:4px 10px;background:rgba(255,255,255,0.05);border-radius:3px;font-size:0.68rem;color:var(--text-muted)">Termite Proof</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2025 Rana Enterprises. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>window.addEventListener("load", function(){ setTimeout(function(){ document.getElementById("loader").classList.add("hidden"); }, 1900); renderProjects("all"); initCounters(); initAOS(); });</script>
+</body>
+</html>
