@@ -3,11 +3,11 @@
 ==========================================*/
 const PRODUCTS = [
   { id:1, name:'3D Customized Wallpaper', category:'wall', material:'pvc', application:'residential', img:'images/3d cstomised wallpaper.jpeg', features:['3D Textured Surface','Waterproof','Impact Resistant','Easy Installation'] },
-  { id:2, name:'Charcoal Panel (128-160 MM)', category:'wall', material:'wpc', application:'residential', img:'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80&auto=format', features:['Deep Matte Finish','Eco-Friendly','Charcoal Coating','Premium Quality'] },
-  { id:3, name:'Charcoal Panels (300 MM)', category:'wall', material:'wpc', application:'residential', img:'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80&auto=format', features:['Wide 300mm Profile','Modern Look','Durable','Easy Maintenance'] },
-  { id:4, name:'Fluted Panel', category:'wall', material:'wpc', application:'residential', img:'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&q=80&auto=format', features:['3D Fluted Texture','Acoustic Properties','Impact Resistant','Lightweight'] },
-  { id:5, name:'UV Marble Sheet', category:'wall', material:'pvc', application:'residential', img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80&auto=format', features:['High Gloss Finish','UV Protected','Seamless Joint','Scratch Resistant'] },
-  { id:6, name:'French Molding', category:'wall', material:'pvc', application:'residential', img:'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&q=80&auto=format', features:['Classic Design','Decorative Appeal','Easy Installation','Multiple Profiles'] },
+  { id:2, name:'Charcoal Panel (128-160 MM)', category:'wall', material:'wpc', application:'residential', img:'images/Charcoal panel/charcoal-panel.jpeg', features:['Deep Matte Finish','Eco-Friendly','Charcoal Coating','Premium Quality'] },
+  { id:3, name:'Charcoal Panels (300 MM)', category:'wall', material:'wpc', application:'residential', img:'images/Charcoal panel/WhatsApp Image 2026-05-27 at 2.11.35 PM.jpeg', features:['Wide 300mm Profile','Modern Look','Durable','Easy Maintenance'] },
+  { id:4, name:'Fluted Panel', category:'wall', material:'wpc', application:'residential', img:'', video:'images/fluted panel.mp4', features:['3D Fluted Texture','Acoustic Properties','Impact Resistant','Lightweight'] },
+  { id:5, name:'UV Marble Sheet', category:'wall', material:'pvc', application:'residential', img:'images/uv marble.jpeg', features:['High Gloss Finish','UV Protected','Seamless Joint','Scratch Resistant'] },
+  { id:6, name:'French Molding', category:'wall', material:'pvc', application:'residential', img:'images/french moduling.jpeg', features:['Classic Design','Decorative Appeal','Easy Installation','Multiple Profiles'] },
   { id:7, name:'UV Marble Roll', category:'wall', material:'pvc', application:'residential', img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80&auto=format', features:['Roll Format','Premium Marble Look','UV Coated','Bulk Application'] },
   { id:8, name:'Mosaic Tiles', category:'wall', material:'glass', application:'residential', img:'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80&auto=format', features:['Decorative Mosaic','Vibrant Colors','Bathroom Safe','Multiple Patterns'] },
   { id:9, name:'WPC Panel', category:'wall', material:'wpc', application:'residential', img:'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&q=80&auto=format', features:['Wood Plastic Composite','Durable','Water Resistant','Eco-Friendly'] },
@@ -45,6 +45,7 @@ function renderFeaturedProducts() {
   const grid = document.getElementById('featured-products-grid');
   if (!grid) return;
   grid.innerHTML = PRODUCTS.slice(0,8).map(p => productCard(p)).join('');
+  initLazyProductVideos();
 }
 
 function renderAllProducts(filtered) {
@@ -54,13 +55,18 @@ function renderAllProducts(filtered) {
   const items = filtered || PRODUCTS;
   grid.innerHTML = items.map(p => productCard(p)).join('');
   if (countEl) countEl.textContent = `Showing ${items.length} products`;
+  initLazyProductVideos();
 }
 
 function productCard(p) {
+  const media = p.video
+    ? `<video class="product-video" playsinline muted autoplay loop preload="metadata" poster="${p.img}" data-src="${p.video}" aria-label="${p.name}"></video>`
+    : `<img src="${p.img}" alt="${p.name}" loading="lazy">`;
+
   return `
   <div class="product-card" data-category="${p.category}">
     <div class="product-img-wrap">
-      <img src="${p.img}" alt="${p.name}" loading="lazy">
+      ${media}
       <span class="product-category-tag">${p.category.toUpperCase()}</span>
       <button class="product-wishlist" title="Save"><i class="far fa-heart"></i></button>
     </div>
@@ -88,6 +94,7 @@ function filterProducts(btn, cat) {
   if (!grid) return;
   const items = cat === 'all' ? PRODUCTS.slice(0,8) : PRODUCTS.filter(p => p.category === cat).slice(0,8);
   grid.innerHTML = items.map(p => productCard(p)).join('');
+  initLazyProductVideos();
 }
 
 function applyFilters() {
@@ -258,6 +265,67 @@ function initAOS() {
 }
 
 /* ==========================================
+   LAZY-LOAD SERVICE VIDEOS
+==========================================*/
+function initLazyServiceVideos() {
+  const cards = document.querySelectorAll('.service-card-video');
+  if (!('IntersectionObserver' in window) || cards.length === 0) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const card = entry.target;
+      const video = card.querySelector('.service-video');
+      if (!video || video.dataset.loaded === 'true') {
+        obs.unobserve(card);
+        return;
+      }
+
+      video.src = card.dataset.videoSrc;
+      video.load();
+      video.addEventListener('loadeddata', () => {
+        card.classList.add('video-ready');
+        video.play().catch(() => {});
+      }, { once: true });
+
+      video.dataset.loaded = 'true';
+      obs.unobserve(card);
+    });
+  }, { rootMargin: '200px 0px' });
+
+  cards.forEach(card => observer.observe(card));
+}
+
+function initLazyProductVideos() {
+  const videos = document.querySelectorAll('.product-video');
+  if (!('IntersectionObserver' in window) || videos.length === 0) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const video = entry.target;
+      if (!video || video.dataset.loaded === 'true') {
+        obs.unobserve(video);
+        return;
+      }
+
+      video.src = video.dataset.src;
+      video.load();
+      video.addEventListener('loadeddata', () => {
+        video.play().catch(() => {});
+      }, { once: true });
+
+      video.dataset.loaded = 'true';
+      obs.unobserve(video);
+    });
+  }, { rootMargin: '200px 0px' });
+
+  videos.forEach(video => observer.observe(video));
+}
+
+/* ==========================================
    GLASS FILM SLIDESHOW
 ==========================================*/
 let slideIndex = 1;
@@ -305,9 +373,15 @@ function startAutoSlide() {
 
 // Start slideshow on page load
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', startAutoSlide);
+  document.addEventListener('DOMContentLoaded', () => {
+    startAutoSlide();
+    initLazyServiceVideos();
+    initLazyProductVideos();
+  });
 } else {
   startAutoSlide();
+  initLazyServiceVideos();
+  initLazyProductVideos();
 }
 
 /* ==========================================
