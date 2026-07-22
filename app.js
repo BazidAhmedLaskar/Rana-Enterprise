@@ -9,8 +9,8 @@ const PRODUCTS = [
   { id:5, name:'UV Marble Sheet', category:'wall', material:'pvc', application:'residential', img:'images/uv marble.jpeg', features:['High Gloss Finish','UV Protected','Seamless Joint','Scratch Resistant'] },
   { id:6, name:'French Molding', category:'wall', material:'pvc', application:'residential', img:'images/french moduling.jpeg', features:['Classic Design','Decorative Appeal','Easy Installation','Multiple Profiles'] },
   { id:7, name:'UV Marble Roll', category:'wall', material:'pvc', application:'residential', img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80&auto=format', features:['Roll Format','Premium Marble Look','UV Coated','Bulk Application'] },
-  { id:8, name:'Mosaic Tiles', category:'wall', material:'glass', application:'residential', img:'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80&auto=format', features:['Decorative Mosaic','Vibrant Colors','Bathroom Safe','Multiple Patterns'] },
-  { id:9, name:'WPC Panel', category:'wall', material:'wpc', application:'residential', img:'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&q=80&auto=format', features:['Wood Plastic Composite','Durable','Water Resistant','Eco-Friendly'] },
+ 
+ 
   { id:10, name:'PU Stone', category:'wall', material:'pvc', application:'residential', img:'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80&auto=format', features:['Natural Stone Look','Lightweight','Textured Surface','Easy Application'] },
   { id:11, name:'Wallpaper', category:'decor', material:'vinyl', application:'residential', img:'https://images.unsplash.com/photo-1615800098779-1be32e60cca3?w=400&q=80&auto=format', features:['Various Patterns','Peel & Stick','Washable','Wide Variety'] },
   { id:12, name:'Custom Wallpaper', category:'decor', material:'vinyl', application:'residential', img:'https://images.unsplash.com/photo-1615800098779-1be32e60cca3?w=400&q=80&auto=format', features:['Custom Design','High Quality Print','Durable','Easy Replace'] },
@@ -184,12 +184,16 @@ document.getElementById('quote-modal').addEventListener('click', function(e) {
    FORM SUBMIT
 ==========================================*/
 function submitForm() {
+  const enquiryFields = document.querySelectorAll('.contact-form-wrap .form-group, .modal-overlay.open .form-group');
+  const enquiry = Array.from(enquiryFields).map(group => {
+    const label = group.querySelector('label');
+    const field = group.querySelector('input:not([type="file"]), select, textarea');
+    if (!field || !field.value || field.value === 'Select Service...' || field.value === 'Select Branch...') return '';
+    return `${label ? label.textContent.replace('*', '').trim() : 'Details'}: ${field.value}`;
+  }).filter(Boolean).join('\n');
+  const message = `Hi Rana Enterprises, I would like to make an enquiry.${enquiry ? `\n\n${enquiry}` : ''}`;
   closeModal();
-  const toast = document.createElement('div');
-  toast.style.cssText = 'position:fixed;top:88px;right:28px;background:linear-gradient(135deg,#2d8a4e,#25D366);color:white;padding:16px 24px;border-radius:8px;font-size:0.9rem;font-weight:600;z-index:9999;box-shadow:0 8px 30px rgba(37,211,102,0.4);animation:fade-up 0.4s ease';
-  toast.innerHTML = '<i class="fas fa-check-circle" style="margin-right:8px"></i>Inquiry submitted! We\'ll contact you within 2 hours.';
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 4500);
+  window.open(`https://wa.me/919265211720?text=${encodeURIComponent(message)}`, '_blank');
 }
 
 /* ==========================================
