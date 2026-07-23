@@ -89,23 +89,56 @@
             <h3>Filter <button onclick="resetFilters()" style="background:none;border:none;color:var(--text-muted);font-size:0.75rem;cursor:pointer;font-family:inherit">Reset</button></h3>
             <div class="filter-group">
               <div class="filter-group-title">Category</div>
-              <label class="filter-check"><input type="checkbox" value="wall" onchange="applyFilters()"><span></span><label>Wall Panels</label></label>
-              <label class="filter-check"><input type="checkbox" value="flooring" onchange="applyFilters()"><span></span><label>Flooring</label></label>
-              <label class="filter-check"><input type="checkbox" value="decor" onchange="applyFilters()"><span></span><label>Décor & Coverings</label></label>
-              <label class="filter-check"><input type="checkbox" value="exterior" onchange="applyFilters()"><span></span><label>Exterior</label></label>
+              <div class="filter-check">
+                <input id="filter-wall" type="checkbox" value="wall" onchange="applyFilters()">
+                <label for="filter-wall" class="filter-check-label"><span class="filter-check-text">Wall Panels</span></label>
+              </div>
+              <div class="filter-check">
+                <input id="filter-flooring" type="checkbox" value="flooring" onchange="applyFilters()">
+                <label for="filter-flooring" class="filter-check-label"><span class="filter-check-text">Flooring</span></label>
+              </div>
+              <div class="filter-check">
+                <input id="filter-decor" type="checkbox" value="decor" onchange="applyFilters()">
+                <label for="filter-decor" class="filter-check-label"><span class="filter-check-text">Décor & Coverings</span></label>
+              </div>
+              <div class="filter-check">
+                <input id="filter-exterior" type="checkbox" value="exterior" onchange="applyFilters()">
+                <label for="filter-exterior" class="filter-check-label"><span class="filter-check-text">Exterior</span></label>
+              </div>
             </div>
             <div class="filter-group">
               <div class="filter-group-title">Material</div>
-              <label class="filter-check"><input type="checkbox" value="pvc" onchange="applyFilters()"><span></span><label>PVC</label></label>
-              <label class="filter-check"><input type="checkbox" value="wpc" onchange="applyFilters()"><span></span><label>WPC</label></label>
-              <label class="filter-check"><input type="checkbox" value="vinyl" onchange="applyFilters()"><span></span><label>Vinyl</label></label>
-              <label class="filter-check"><input type="checkbox" value="wood" onchange="applyFilters()"><span></span><label>Wood</label></label>
+              <div class="filter-check">
+                <input id="filter-pvc" type="checkbox" value="pvc" onchange="applyFilters()">
+                <label for="filter-pvc" class="filter-check-label"><span class="filter-check-text">PVC</span></label>
+              </div>
+              <div class="filter-check">
+                <input id="filter-wpc" type="checkbox" value="wpc" onchange="applyFilters()">
+                <label for="filter-wpc" class="filter-check-label"><span class="filter-check-text">WPC</span></label>
+              </div>
+              <div class="filter-check">
+                <input id="filter-vinyl" type="checkbox" value="vinyl" onchange="applyFilters()">
+                <label for="filter-vinyl" class="filter-check-label"><span class="filter-check-text">Vinyl</span></label>
+              </div>
+              <div class="filter-check">
+                <input id="filter-wood" type="checkbox" value="wood" onchange="applyFilters()">
+                <label for="filter-wood" class="filter-check-label"><span class="filter-check-text">Wood</span></label>
+              </div>
             </div>
             <div class="filter-group">
               <div class="filter-group-title">Application</div>
-              <label class="filter-check"><input type="checkbox" value="residential" onchange="applyFilters()"><span></span><label>Residential</label></label>
-              <label class="filter-check"><input type="checkbox" value="commercial" onchange="applyFilters()"><span></span><label>Commercial</label></label>
-              <label class="filter-check"><input type="checkbox" value="outdoor" onchange="applyFilters()"><span></span><label>Outdoor</label></label>
+              <div class="filter-check">
+                <input id="filter-residential" type="checkbox" value="residential" onchange="applyFilters()">
+                <label for="filter-residential" class="filter-check-label"><span class="filter-check-text">Residential</span></label>
+              </div>
+              <div class="filter-check">
+                <input id="filter-commercial" type="checkbox" value="commercial" onchange="applyFilters()">
+                <label for="filter-commercial" class="filter-check-label"><span class="filter-check-text">Commercial</span></label>
+              </div>
+              <div class="filter-check">
+                <input id="filter-outdoor" type="checkbox" value="outdoor" onchange="applyFilters()">
+                <label for="filter-outdoor" class="filter-check-label"><span class="filter-check-text">Outdoor</span></label>
+              </div>
             </div>
           </div>
         </div>
@@ -276,7 +309,7 @@
 <div class="floating-buttons">
   <a href="https://wa.me/919265211720" class="floating-btn floating-btn-whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <a href="tel:+919265211720" class="floating-btn floating-btn-call" title="Call"><i class="fas fa-phone"></i></a>
-  <a href="contact.html" class="floating-btn floating-btn-quote" title="Get Quote"><i class="fas fa-envelope"></i></a>
+  <a href="#" onclick="openChatbotModal(); return false;" class="floating-btn floating-btn-quote" title="Chatbot"><i class="fas fa-robot"></i></a>
 </div>
 
 <!-- Zoom Modal -->

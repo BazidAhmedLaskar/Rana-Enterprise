@@ -212,8 +212,228 @@ function closeModal() {
   document.getElementById('quote-modal').classList.remove('open');
   document.body.style.overflow = '';
 }
+
+function ensureChatbotModal() {
+  if (document.getElementById('chatbot-modal')) return;
+
+  const modal = document.createElement('div');
+  modal.id = 'chatbot-modal';
+  modal.className = 'modal-overlay chatbot-modal';
+  modal.innerHTML = `
+    <div class="modal-box chatbot-box">
+      <button class="modal-close" onclick="closeChatbotModal()" aria-label="Close chatbot"><i class="fas fa-times"></i></button>
+      <div class="chatbot-header">
+        <div class="chatbot-avatar">
+          <img src="images/logo/small logo.png" alt="Rana Enterprises logo" onerror="this.onerror=null; this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend', '<i class=\'fas fa-robot\'></i>');">
+        </div>
+        <div>
+          <h3>Rana Assistant</h3>
+          <p>Answer a few quick questions and we’ll send your request to WhatsApp.</p>
+        </div>
+      </div>
+      <div class="chatbot-messages" id="chatbot-messages"></div>
+      <div class="chatbot-answers" id="chatbot-answers"></div>
+      <div class="chatbot-actions">
+        <button class="btn-primary" style="width:100%;justify-content:center" type="button"><i class="fas fa-arrow-right"></i> Continue</button>
+      </div>
+    </div>`;
+
+  document.body.appendChild(modal);
+}
+
+function openChatbotModal() {
+  ensureChatbotModal();
+  const modal = document.getElementById('chatbot-modal');
+  if (modal) {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    resetChatbotFlow();
+  }
+}
+
+function closeChatbotModal() {
+  const modal = document.getElementById('chatbot-modal');
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+let chatbotStep = 0;
+let chatbotData = {};
+const chatbotQuestions = [
+  {
+    key: 'service',
+    prompt: 'Which service are you looking for?',
+    type: 'select',
+    options: ['Wall Paneling', 'Flooring', 'Ceiling', 'Full Turnkey Interior', 'Renovation'],
+    required: true
+  },
+  {
+    key: 'space',
+    prompt: 'Tell us a bit about your space or project.',
+    type: 'textarea',
+    placeholder: 'Example: 2BHK living room, waterproof wall panels, modern finish.',
+    required: true
+  },
+  {
+    key: 'phone',
+    prompt: 'What is your phone number? (optional)',
+    type: 'input',
+    placeholder: '+91-92652-11720',
+    required: false
+  }
+];
+
+function resetChatbotFlow() {
+  chatbotStep = 0;
+  chatbotData = {};
+  const answers = document.getElementById('chatbot-answers');
+  const messages = document.getElementById('chatbot-messages');
+  if (answers) answers.innerHTML = '';
+  if (messages) {
+    messages.innerHTML = '';
+    addChatbotMessage('Hi! I can help you choose the right interior solution. What do you need help with?', false, false);
+    setTimeout(showCurrentChatbotQuestion, 700);
+  }
+}
+
+function addChatbotMessage(text, isUser = false, animate = true) {
+  const messages = document.getElementById('chatbot-messages');
+  if (!messages) return;
+  const bubble = document.createElement('div');
+  bubble.className = `chatbot-bubble ${isUser ? 'user' : 'assistant'}`;
+  bubble.textContent = text;
+  if (animate) {
+    bubble.classList.add('chatbot-bubble-animate');
+  }
+  messages.appendChild(bubble);
+  requestAnimationFrame(() => {
+    bubble.classList.add('show');
+  });
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function showTypingIndicator() {
+  const messages = document.getElementById('chatbot-messages');
+  if (!messages) return;
+  const typing = document.createElement('div');
+  typing.className = 'chatbot-bubble assistant chatbot-typing';
+  typing.innerHTML = '<span></span><span></span><span></span>';
+  messages.appendChild(typing);
+  messages.scrollTop = messages.scrollHeight;
+  return typing;
+}
+
+function removeTypingIndicator() {
+  const typing = document.querySelector('.chatbot-typing');
+  if (typing) typing.remove();
+}
+
+function renderChatbotAnswerField(question) {
+  const answers = document.getElementById('chatbot-answers');
+  if (!answers) return;
+
+  let fieldHtml = '';
+  if (question.type === 'select') {
+    fieldHtml = `<label>${question.prompt}</label><select id="chatbot-${question.key}"><option value="">Select an option</option>${question.options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}</select>`;
+  } else if (question.type === 'textarea') {
+    fieldHtml = `<label>${question.prompt}</label><textarea id="chatbot-${question.key}" rows="3" placeholder="${question.placeholder || ''}"></textarea>`;
+  } else {
+    fieldHtml = `<label>${question.prompt}</label><input type="text" id="chatbot-${question.key}" placeholder="${question.placeholder || ''}">`;
+  }
+
+  answers.innerHTML = fieldHtml;
+  const button = document.querySelector('.chatbot-actions button');
+  if (button) {
+    button.innerHTML = `<i class="fas fa-paper-plane"></i> ${chatbotStep === chatbotQuestions.length - 1 ? 'Send to WhatsApp' : 'Continue'}`;
+    button.onclick = submitChatbot;
+  }
+
+  const input = document.getElementById(`chatbot-${question.key}`);
+  if (input) {
+    input.focus();
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && question.type !== 'textarea') {
+        e.preventDefault();
+        submitChatbot();
+      }
+    });
+  }
+}
+
+function showCurrentChatbotQuestion() {
+  const messages = document.getElementById('chatbot-messages');
+  const answers = document.getElementById('chatbot-answers');
+  if (!messages || !answers) return;
+
+  if (chatbotStep >= chatbotQuestions.length) {
+    const service = chatbotData.service || 'Interior service';
+    const space = chatbotData.space || 'No additional details provided.';
+    const contact = chatbotData.phone ? `\nContact: ${chatbotData.phone}` : '';
+    const message = `Hi Rana Enterprises! I need help with ${service}.\n\nDetails: ${space}${contact}`;
+    closeChatbotModal();
+    window.open(`https://wa.me/919265211720?text=${encodeURIComponent(message)}`, '_blank');
+    return;
+  }
+
+  answers.innerHTML = '';
+  const current = chatbotQuestions[chatbotStep];
+  const typingBubble = showTypingIndicator();
+  setTimeout(() => {
+    removeTypingIndicator();
+    addChatbotMessage(current.prompt, false, true);
+    renderChatbotAnswerField(current);
+  }, 700);
+}
+
+function submitChatbot() {
+  const currentQuestion = chatbotQuestions[chatbotStep];
+  if (!currentQuestion) return;
+
+  const input = document.getElementById(`chatbot-${currentQuestion.key}`);
+  if (!input) return;
+
+  const value = input.value.trim();
+  if (currentQuestion.required && !value) {
+    input.classList.add('chatbot-field-error');
+    input.focus();
+    return;
+  }
+
+  chatbotData[currentQuestion.key] = value;
+  if (value) {
+    addChatbotMessage(value, true, true);
+  }
+
+  const messages = document.getElementById('chatbot-messages');
+  if (messages) {
+    const typingBubble = showTypingIndicator();
+    setTimeout(() => {
+      removeTypingIndicator();
+      chatbotStep += 1;
+      showCurrentChatbotQuestion();
+    }, 600);
+  } else {
+    chatbotStep += 1;
+    showCurrentChatbotQuestion();
+  }
+}
+
 document.getElementById('quote-modal').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
+});
+
+document.addEventListener('click', function(e) {
+  const modal = document.getElementById('chatbot-modal');
+  if (modal && e.target === modal) closeChatbotModal();
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeModal();
+    closeChatbotModal();
+  }
 });
 
 /* ==========================================
