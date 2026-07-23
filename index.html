@@ -468,6 +468,13 @@
   <a href="contact.html" class="floating-btn floating-btn-quote" title="Get Quote"><i class="fas fa-envelope"></i></a>
 </div>
 <script src="app.js"></script>
-<script>window.addEventListener("load", function(){ setTimeout(function(){ document.getElementById("loader").classList.add("hidden"); }, 1900); renderFeaturedProducts(); renderProjects("all"); initCounters(); initAOS(); });</script>
+<script>
+  function startPage() {
+    setTimeout(function(){ document.getElementById("loader").classList.add("hidden"); }, 450);
+    renderFeaturedProducts(); renderProjects("all"); initCounters(); initAOS();
+  }
+  document.addEventListener("DOMContentLoaded", startPage, { once: true });
+  setTimeout(function(){ document.getElementById("loader").classList.add("hidden"); }, 2500);
+</script>
 </body>
 </html>
