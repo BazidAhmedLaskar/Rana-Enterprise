@@ -12,15 +12,15 @@ const PRODUCTS = [
   { id:10, name:'PU Stone', category:'wall', material:'pvc', application:'residential', img:'images/pu stone.jpeg', features:['Natural Stone Look','Lightweight','Textured Surface','Easy Application'] },
   { id:11, name:'Wallpaper', category:'decor', material:'vinyl', application:'residential', img:'images/wallpaper.jpeg', features:['Various Patterns','Peel & Stick','Washable','Wide Variety'] },
   { id:12, name:'Custom Wallpaper', category:'decor', material:'vinyl', application:'residential', img:'images/custom wallpaper.jpeg', features:['Custom Design','High Quality Print','Durable','Easy Replace'] },
-  { id:13, name:'Roller Blind', category:'decor', material:'fabric', application:'residential', img:'https://images.unsplash.com/photo-1615873968403-89e068629265?w=400&q=80&auto=format', features:['Blackout Options','UV Protection','Custom Sizes','Smooth Operation'] },
-  { id:14, name:'Zebra Blind', category:'decor', material:'fabric', application:'residential', img:'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=400&q=80&auto=format', features:['Day & Night Control','Light Filtering','Modern Design','Custom Sizes'] },
-  { id:15, name:'Arctic Pastel Grass', category:'exterior', material:'synthetic', application:'outdoor', img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80&auto=format', features:['UV Resistant','Soft Texture','Low Maintenance','Natural Appearance'] },
+  { id:13, name:'Roller Blind', category:'decor', material:'fabric', application:'residential', img:'images/roller blind.jpeg', features:['Blackout Options','UV Protection','Custom Sizes','Smooth Operation'] },
+  { id:14, name:'Zebra Blind', category:'decor', material:'fabric', application:'residential', img:'images/Zebra Blind.jpeg', features:['Day & Night Control','Light Filtering','Modern Design','Custom Sizes'] },
+  { id:15, name:'Arctic Pastel Grass', category:'exterior', material:'synthetic', application:'outdoor', img:'images/Arctic Pastel Grass.jpeg', features:['UV Resistant','Soft Texture','Low Maintenance','Natural Appearance'] },
   { id:16, name:'PVC Carpet', category:'flooring', material:'pvc', application:'commercial', img:'images/pvc carpet.jpeg', features:['Easy Clean','Water Resistant','Anti-Slip','Durable'] },
   { id:18, name:'PVC Carpet - 4 MM', category:'flooring', material:'pvc', application:'commercial', img:'images/PVC Carpet - 4 MM.jpeg', features:['4mm Thickness','Extra Durable','Enhanced Comfort','Superior Grip'] },
-  { id:19, name:'Glass Film', category:'decor', material:'vinyl', application:'commercial', img:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80&auto=format', features:['Frosted Options','Privacy Protection','UV Blocking','Easy Application'] },
-  { id:20, name:'Soffit Panel', category:'exterior', material:'pvc', application:'outdoor', img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80&auto=format', features:['Weather Resistant','Vented Options','Easy Installation','Multiple Colors'] },
+  { id:19, name:'Glass Film', category:'decor', material:'vinyl', application:'commercial', img:'images/Glass Film.png', features:['Frosted Options','Privacy Protection','UV Blocking','Easy Application'] },
+  { id:20, name:'Soffit Panel', category:'exterior', material:'pvc', application:'outdoor', img:'images/Soffit Panel.png', features:['Weather Resistant','Vented Options','Easy Installation','Multiple Colors'] },
   { id:21, name:'PVC Flooring', category:'flooring', material:'pvc', application:'commercial', img:'images/pvc flooring.jpeg', features:['100% Waterproof','Easy Maintenance','Anti-Skid','Cost Effective'] },
-  { id:22, name:'Artificial Grass', category:'exterior', material:'synthetic', application:'outdoor', img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80&auto=format', features:['UV Resistant','Low Maintenance','Natural Look','Various Pile Heights'] },
+  { id:22, name:'Artificial Grass', category:'exterior', material:'synthetic', application:'outdoor', img:'images/artificial grass.png', features:['UV Resistant','Low Maintenance','Natural Look','Various Pile Heights'] },
 ];
 
 const PROJECTS = [
@@ -43,6 +43,7 @@ function renderFeaturedProducts() {
   if (!grid) return;
   grid.innerHTML = PRODUCTS.slice(0,8).map(p => productCard(p)).join('');
   initLazyProductVideos();
+  initWishlist();
 }
 
 function renderAllProducts(filtered) {
@@ -53,6 +54,7 @@ function renderAllProducts(filtered) {
   grid.innerHTML = items.map(p => productCard(p)).join('');
   if (countEl) countEl.textContent = `Showing ${items.length} products`;
   initLazyProductVideos();
+  initWishlist();
 }
 
 function productCard(p) {
@@ -65,7 +67,7 @@ function productCard(p) {
     <div class="product-img-wrap">
       ${media}
       <span class="product-category-tag">${p.category.toUpperCase()}</span>
-      <button class="product-wishlist" title="Save"><i class="far fa-heart"></i></button>
+      <button class="product-wishlist" type="button" data-product-id="${p.id}" title="Save" aria-label="Save ${p.name}" aria-pressed="false"><i class="far fa-heart"></i></button>
     </div>
     <div class="product-body">
       <div class="product-name">${p.name}</div>
@@ -77,6 +79,42 @@ function productCard(p) {
     </div>
   </div>`;
 }
+
+function getSavedProductIds() {
+  try {
+    return JSON.parse(localStorage.getItem('rana-saved-products') || '[]');
+  } catch (error) {
+    return [];
+  }
+}
+
+function updateWishlistButton(button, saved) {
+  const product = PRODUCTS.find(item => item.id === Number(button.dataset.productId));
+  if (!product) return;
+  button.classList.toggle('saved', saved);
+  button.title = saved ? 'Remove from saved' : 'Save';
+  button.setAttribute('aria-label', `${saved ? 'Remove' : 'Save'} ${product.name}`);
+  button.setAttribute('aria-pressed', String(saved));
+  button.innerHTML = `<i class="fa-${saved ? 'solid' : 'regular'} fa-heart"></i>`;
+}
+
+function initWishlist() {
+  const savedIds = getSavedProductIds();
+  document.querySelectorAll('.product-wishlist').forEach(button => {
+    updateWishlistButton(button, savedIds.includes(Number(button.dataset.productId)));
+  });
+}
+
+document.addEventListener('click', event => {
+  const button = event.target.closest('.product-wishlist');
+  if (!button) return;
+  const productId = Number(button.dataset.productId);
+  const savedIds = getSavedProductIds();
+  const saved = !savedIds.includes(productId);
+  const nextIds = saved ? [...savedIds, productId] : savedIds.filter(id => id !== productId);
+  localStorage.setItem('rana-saved-products', JSON.stringify(nextIds));
+  updateWishlistButton(button, saved);
+});
 
 function viewProduct(name) { alert(`📦 ${name}\nFull specification page coming soon. Please WhatsApp or call us for detailed specs and availability.`); }
 function quoteProduct(name) { window.open(`https://wa.me/919265211720?text=Hi+Rana+Enterprises%2C+I+would+like+a+quote+for:+${encodeURIComponent(name)}`,'_blank'); }
@@ -92,6 +130,7 @@ function filterProducts(btn, cat) {
   const items = cat === 'all' ? PRODUCTS.slice(0,8) : PRODUCTS.filter(p => p.category === cat).slice(0,8);
   grid.innerHTML = items.map(p => productCard(p)).join('');
   initLazyProductVideos();
+  initWishlist();
 }
 
 function applyFilters() {

@@ -858,6 +858,7 @@ section { position:relative; }
   cursor: pointer;
 }
 .product-wishlist:hover { color: #e74c3c; background: rgba(0,0,0,0.7); }
+.product-wishlist.saved { color: #e74c3c; background: rgba(0,0,0,0.7); }
 .product-body {
   padding: 18px;
 }
