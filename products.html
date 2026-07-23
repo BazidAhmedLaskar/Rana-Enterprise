@@ -140,28 +140,28 @@
       <div style="max-width:900px;margin:0 auto;margin-bottom:40px">
         <div class="glass-film-slideshow-container">
           <div class="glass-film-slide fade" style="display:block">
-            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.05 PM (1).jpeg" alt="Glass Film 1" class="glass-film-img" onclick="openZoom(this.src)">
+            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.05 PM (1).jpeg" alt="Glass Film 1" class="glass-film-img" loading="lazy" decoding="async" onclick="openZoom(this.src)">
           </div>
           <div class="glass-film-slide fade">
-            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.05 PM (2).jpeg" alt="Glass Film 2" class="glass-film-img" onclick="openZoom(this.src)">
+            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.05 PM (2).jpeg" alt="Glass Film 2" class="glass-film-img" loading="lazy" decoding="async" onclick="openZoom(this.src)">
           </div>
           <div class="glass-film-slide fade">
-            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.06 PM (1).jpeg" alt="Glass Film 3" class="glass-film-img" onclick="openZoom(this.src)">
+            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.06 PM (1).jpeg" alt="Glass Film 3" class="glass-film-img" loading="lazy" decoding="async" onclick="openZoom(this.src)">
           </div>
           <div class="glass-film-slide fade">
-            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.06 PM (2).jpeg" alt="Glass Film 4" class="glass-film-img" onclick="openZoom(this.src)">
+            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.06 PM (2).jpeg" alt="Glass Film 4" class="glass-film-img" loading="lazy" decoding="async" onclick="openZoom(this.src)">
           </div>
           <div class="glass-film-slide fade">
-            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.06 PM.jpeg" alt="Glass Film 5" class="glass-film-img" onclick="openZoom(this.src)">
+            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.06 PM.jpeg" alt="Glass Film 5" class="glass-film-img" loading="lazy" decoding="async" onclick="openZoom(this.src)">
           </div>
           <div class="glass-film-slide fade">
-            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.07 PM (1).jpeg" alt="Glass Film 6" class="glass-film-img" onclick="openZoom(this.src)">
+            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.07 PM (1).jpeg" alt="Glass Film 6" class="glass-film-img" loading="lazy" decoding="async" onclick="openZoom(this.src)">
           </div>
           <div class="glass-film-slide fade">
-            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.07 PM (2).jpeg" alt="Glass Film 7" class="glass-film-img" onclick="openZoom(this.src)">
+            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.07 PM (2).jpeg" alt="Glass Film 7" class="glass-film-img" loading="lazy" decoding="async" onclick="openZoom(this.src)">
           </div>
           <div class="glass-film-slide fade">
-            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.07 PM.jpeg" alt="Glass Film 8" class="glass-film-img" onclick="openZoom(this.src)">
+            <img src="images/glass Film/WhatsApp Image 2026-05-27 at 1.27.07 PM.jpeg" alt="Glass Film 8" class="glass-film-img" loading="lazy" decoding="async" onclick="openZoom(this.src)">
           </div>
           
           <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
@@ -222,14 +222,14 @@
         <div class="footer-col">
           <h4>Products</h4>
           <div class="footer-links">
-            <a href="#">PVC Wall Panels</a>
-            <a href="#">WPC Fluted Louvers</a>
-            <a href="#">UV Marble Sheets</a>
-            <a href="#">Luxury Vinyl Flooring</a>
-            <a href="#">Charcoal Panels</a>
-            <a href="#">PVC Ceilings</a>
-            <a href="#">Roller Blinds</a>
-            <a href="#">Artificial Grass</a>
+            <a href="products.html">PVC Wall Panels</a>
+            <a href="products.html">WPC Fluted Louvers</a>
+            <a href="products.html">UV Marble Sheets</a>
+            <a href="products.html">Luxury Vinyl Flooring</a>
+            <a href="products.html">Charcoal Panels</a>
+            <a href="products.html">PVC Ceilings</a>
+            <a href="products.html">Roller Blinds</a>
+            <a href="products.html">Artificial Grass</a>
           </div>
         </div>
         <div class="footer-col">
@@ -247,11 +247,11 @@
   </div>
   <div class="container">
     <div class="footer-bottom">
-      <p>© 2025 Rana Enterprises. All rights reserved.</p>
+      <p>© 2026 Rana Enterprises. All rights reserved.</p>
       <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Sitemap</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="sitemap.xml">Sitemap</a>
       </div>
     </div>
   </div></footer><div class="modal-overlay" id="quote-modal">
@@ -285,14 +285,18 @@
   <img src="" alt="Zoomed Image">
 </div>
 
-<script src="app.js"></script>
+<script src="app.js" defer></script>
 <script>
+  function hideLoader() {
+    const loader = document.getElementById("loader");
+    if (loader) loader.classList.add("hidden");
+  }
   function startPage() {
-    setTimeout(function(){ document.getElementById("loader").classList.add("hidden"); }, 450);
+    hideLoader();
     renderAllProducts(); initAOS();
   }
   document.addEventListener("DOMContentLoaded", startPage, { once: true });
-  setTimeout(function(){ document.getElementById("loader").classList.add("hidden"); }, 2500);
+  setTimeout(hideLoader, 2000);
 </script>
 </body>
 </html>

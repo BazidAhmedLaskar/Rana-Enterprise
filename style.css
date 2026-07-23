@@ -34,6 +34,9 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
 }
+body.page-fixed-nav {
+  padding-top: 72px;
+}
 
 img { max-width:100%; display:block; }
 a { text-decoration:none; color:inherit; }
@@ -105,6 +108,13 @@ ul { list-style:none; }
   justify-content: space-between;
   transition: var(--transition);
   background: transparent;
+}
+body.page-fixed-nav #navbar {
+  background: rgba(10,18,28,0.97);
+  backdrop-filter: blur(20px);
+}
+body.page-fixed-nav #navbar.scrolled {
+  background: rgba(10,18,28,0.97);
 }
 #navbar.scrolled {
   background: rgba(10,18,28,0.97);
