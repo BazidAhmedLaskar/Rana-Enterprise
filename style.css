@@ -1323,7 +1323,7 @@ section { position:relative; }
   overflow: hidden;
   aspect-ratio: 3/4;
 }
-.about-img-main img { width:100%; height:100%; object-fit:cover; }
+.about-img-main img, .about-img-main video { width:100%; height:100%; object-fit:cover; display:block; }
 .about-img-accent {
   position: absolute;
   bottom: -30px; right: -30px;

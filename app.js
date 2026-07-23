@@ -8,8 +8,6 @@ const PRODUCTS = [
   { id:4, name:'Fluted Panel', category:'wall', material:'wpc', application:'residential', img:'', video:'images/fluted panel.mp4', features:['3D Fluted Texture','Acoustic Properties','Impact Resistant','Lightweight'] },
   { id:5, name:'UV Marble Sheet', category:'wall', material:'pvc', application:'residential', img:'images/uv marble.jpeg', features:['High Gloss Finish','UV Protected','Seamless Joint','Scratch Resistant'] },
   { id:6, name:'French Molding', category:'wall', material:'pvc', application:'residential', img:'images/french moduling.jpeg', features:['Classic Design','Decorative Appeal','Easy Installation','Multiple Profiles'] },
-  { id:7, name:'UV Marble Roll', category:'wall', material:'pvc', application:'residential', img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80&auto=format', features:['Roll Format','Premium Marble Look','UV Coated','Bulk Application'] },
- 
  
   { id:10, name:'PU Stone', category:'wall', material:'pvc', application:'residential', img:'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80&auto=format', features:['Natural Stone Look','Lightweight','Textured Surface','Easy Application'] },
   { id:11, name:'Wallpaper', category:'decor', material:'vinyl', application:'residential', img:'https://images.unsplash.com/photo-1615800098779-1be32e60cca3?w=400&q=80&auto=format', features:['Various Patterns','Peel & Stick','Washable','Wide Variety'] },
