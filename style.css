@@ -936,12 +936,6 @@ section { position:relative; }
   color: var(--white);
   margin-bottom: 6px;
 }
-.product-price {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 10px;
-}
 .product-features {
   display: flex;
   flex-wrap: wrap;
@@ -1562,16 +1556,6 @@ section { position:relative; }
 .products-count {
   font-size: 0.85rem;
   color: var(--text-muted);
-}
-.products-sort select {
-  background: var(--charcoal-mid);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: var(--cream);
-  padding: 8px 16px;
-  border-radius: var(--radius);
-  font-size: 0.82rem;
-  outline: none;
-  cursor: pointer;
 }
 
 /* ==========================================
