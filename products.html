@@ -161,6 +161,30 @@
     </div>
   </section>
 
+  <!-- WALLPAPER DOWNLOAD SECTION -->
+  <section class="section-pad" style="background:linear-gradient(135deg, rgba(201,168,76,0.08), rgba(28,42,71,0.5));">
+    <div class="container">
+      <div style="text-align:center;max-width:800px;margin:0 auto">
+        <div class="section-label" style="justify-content:center">Design Resources</div>
+        <h2 class="section-title" style="margin-bottom:12px">Download Wallpaper <em>Design Catalog</em></h2>
+        <p style="color:rgba(248,244,238,0.78);margin-bottom:32px;font-size:0.95rem;line-height:1.8">
+          Get our comprehensive wallpaper and interior design catalog featuring all PVC wall panels, charcoal panels, fluted louvers, marble sheets, and flooring options. Perfect for architects, interior designers, and homeowners planning their next project.
+        </p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+          <a href="#" onclick="downloadCatalog('wallpaper'); return false;" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px">
+            <i class="fas fa-download"></i> Download Wallpaper Designs (PDF)
+          </a>
+          <a href="https://wa.me/919265211720?text=I+want+the+wallpaper+designs+catalog" class="btn-outline" style="display:inline-flex;align-items:center;gap:8px" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i> Request via WhatsApp
+          </a>
+        </div>
+        <p style="color:var(--text-muted);margin-top:20px;font-size:0.8rem">
+          High-resolution designs | All categories included | Updated quarterly
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="section-pad" style="padding-top:0;">
     <div class="container">
       <div class="section-label" style="justify-content:center">Best Wall Panels in Surat</div>
@@ -344,6 +368,19 @@
   }
   document.addEventListener("DOMContentLoaded", startPage, { once: true });
   setTimeout(hideLoader, 2000);
+  
+  // Download catalog function
+  function downloadCatalog(type) {
+    // Create a message to user
+    const message = type === 'wallpaper' 
+      ? 'Wallpaper catalog download will be available soon. Please contact us on WhatsApp or call for the latest designs.' 
+      : 'Catalog download is currently being prepared.';
+    
+    alert(message);
+    
+    // Optionally redirect to contact or WhatsApp
+    // window.location.href = 'https://wa.me/919265211720?text=I+want+the+wallpaper+designs+catalog';
+  }
 </script>
 </body>
 </html>
