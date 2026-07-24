@@ -534,7 +534,7 @@ section { position:relative; }
   inset: 0;
   background:
     linear-gradient(135deg, rgba(13,27,42,0.97) 0%, rgba(13,27,42,0.7) 50%, rgba(13,27,42,0.85) 100%),
-    url("images/hero image.jpeg") center/cover no-repeat;
+    url("images/hero-image.jpeg") center/cover no-repeat;
   z-index: 0;
 }
 .hero-bg::after {

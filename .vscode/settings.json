@@ -1,3 +1,5 @@
 {
-    "liveServer.settings.port": 5506
+    "liveServer.settings.port": 5508,
+    "liveServer.settings.host": "0.0.0.0",
+    "liveServer.settings.useLocalIp": true
 }

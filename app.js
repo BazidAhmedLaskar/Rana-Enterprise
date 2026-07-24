@@ -2,25 +2,25 @@
    DATA
 ==========================================*/
 const PRODUCTS = [
-  { id:1, name:'3D Customized Wallpaper', category:'wall', material:'pvc', application:'residential', img:'images/3d cstomised wallpaper.jpeg', features:['3D Textured Surface','Waterproof','Impact Resistant','Easy Installation'] },
-  { id:2, name:'Charcoal Panel (128-160 MM)', category:'wall', material:'wpc', application:'residential', img:'images/Charcoal panel/charcoal-panel.jpeg', features:['Deep Matte Finish','Eco-Friendly','Charcoal Coating','Premium Quality'] },
-  { id:3, name:'Charcoal Panels (300 MM)', category:'wall', material:'wpc', application:'residential', img:'images/Charcoal panel/WhatsApp Image 2026-05-27 at 2.11.35 PM.jpeg', features:['Wide 300mm Profile','Modern Look','Durable','Easy Maintenance'] },
-  { id:4, name:'Fluted Panel', category:'wall', material:'wpc', application:'residential', img:'', video:'images/fluted panel.mp4', features:['3D Fluted Texture','Acoustic Properties','Impact Resistant','Lightweight'] },
-  { id:5, name:'UV Marble Sheet', category:'wall', material:'pvc', application:'residential', img:'images/uv marble.jpeg', features:['High Gloss Finish','UV Protected','Seamless Joint','Scratch Resistant'] },
-  { id:6, name:'French Molding', category:'wall', material:'pvc', application:'residential', img:'images/french moduling.jpeg', features:['Classic Design','Decorative Appeal','Easy Installation','Multiple Profiles'] },
+  { id:1, name:'3D Customized Wallpaper', category:'wall', material:'pvc', application:'residential', img:'images/3d-customized-wallpaper.jpeg', features:['3D Textured Surface','Waterproof','Impact Resistant','Easy Installation'] },
+  { id:2, name:'Charcoal Panel (128-160 MM)', category:'wall', material:'wpc', application:'residential', img:'images/Charcoal-panel/charcoal-panel.jpeg', features:['Deep Matte Finish','Eco-Friendly','Charcoal Coating','Premium Quality'] },
+  { id:3, name:'Charcoal Panels (300 MM)', category:'wall', material:'wpc', application:'residential', img:'images/Charcoal-panel/WhatsApp-Image-2026-05-27-at-2.11.35-PM.jpeg', features:['Wide 300mm Profile','Modern Look','Durable','Easy Maintenance'] },
+  { id:4, name:'Fluted Panel', category:'wall', material:'wpc', application:'residential', img:'', video:'images/fluted-panel.mp4', features:['3D Fluted Texture','Acoustic Properties','Impact Resistant','Lightweight'] },
+  { id:5, name:'UV Marble Sheet', category:'wall', material:'pvc', application:'residential', img:'images/uv-marble.jpeg', features:['High Gloss Finish','UV Protected','Seamless Joint','Scratch Resistant'] },
+  { id:6, name:'French Molding', category:'wall', material:'pvc', application:'residential', img:'images/french-molding.jpeg', features:['Classic Design','Decorative Appeal','Easy Installation','Multiple Profiles'] },
  
-  { id:10, name:'PU Stone', category:'wall', material:'pvc', application:'residential', img:'images/pu stone.jpeg', features:['Natural Stone Look','Lightweight','Textured Surface','Easy Application'] },
+  { id:10, name:'PU Stone', category:'wall', material:'pvc', application:'residential', img:'images/pu-stone.jpeg', features:['Natural Stone Look','Lightweight','Textured Surface','Easy Application'] },
   { id:11, name:'Wallpaper', category:'decor', material:'vinyl', application:'residential', img:'images/wallpaper.jpeg', features:['Various Patterns','Peel & Stick','Washable','Wide Variety'] },
-  { id:12, name:'Custom Wallpaper', category:'decor', material:'vinyl', application:'residential', img:'images/custom wallpaper.jpeg', features:['Custom Design','High Quality Print','Durable','Easy Replace'] },
-  { id:13, name:'Roller Blind', category:'decor', material:'fabric', application:'residential', img:'images/roller blind.jpeg', features:['Blackout Options','UV Protection','Custom Sizes','Smooth Operation'] },
-  { id:14, name:'Zebra Blind', category:'decor', material:'fabric', application:'residential', img:'images/Zebra Blind.jpeg', features:['Day & Night Control','Light Filtering','Modern Design','Custom Sizes'] },
-  { id:15, name:'Arctic Pastel Grass', category:'exterior', material:'synthetic', application:'outdoor', img:'images/Arctic Pastel Grass.jpeg', features:['UV Resistant','Soft Texture','Low Maintenance','Natural Appearance'] },
-  { id:16, name:'PVC Carpet', category:'flooring', material:'pvc', application:'commercial', img:'images/pvc carpet.jpeg', features:['Easy Clean','Water Resistant','Anti-Slip','Durable'] },
-  { id:18, name:'PVC Carpet - 4 MM', category:'flooring', material:'pvc', application:'commercial', img:'images/PVC Carpet - 4 MM.jpeg', features:['4mm Thickness','Extra Durable','Enhanced Comfort','Superior Grip'] },
-  { id:19, name:'Glass Film', category:'decor', material:'vinyl', application:'commercial', img:'images/Glass Film.png', features:['Frosted Options','Privacy Protection','UV Blocking','Easy Application'] },
-  { id:20, name:'Soffit Panel', category:'exterior', material:'pvc', application:'outdoor', img:'images/Soffit Panel.png', features:['Weather Resistant','Vented Options','Easy Installation','Multiple Colors'] },
-  { id:21, name:'PVC Flooring', category:'flooring', material:'pvc', application:'commercial', img:'images/pvc flooring.jpeg', features:['100% Waterproof','Easy Maintenance','Anti-Skid','Cost Effective'] },
-  { id:22, name:'Artificial Grass', category:'exterior', material:'synthetic', application:'outdoor', img:'images/artificial grass.png', features:['UV Resistant','Low Maintenance','Natural Look','Various Pile Heights'] },
+  { id:12, name:'Custom Wallpaper', category:'decor', material:'vinyl', application:'residential', img:'images/custom-wallpaper.jpeg', features:['Custom Design','High Quality Print','Durable','Easy Replace'] },
+  { id:13, name:'Roller Blind', category:'decor', material:'fabric', application:'residential', img:'images/roller-blind.jpeg', features:['Blackout Options','UV Protection','Custom Sizes','Smooth Operation'] },
+  { id:14, name:'Zebra Blind', category:'decor', material:'fabric', application:'residential', img:'images/zebra-blind.jpeg', features:['Day & Night Control','Light Filtering','Modern Design','Custom Sizes'] },
+  { id:15, name:'Arctic Pastel Grass', category:'exterior', material:'synthetic', application:'outdoor', img:'images/arctic-pastel-grass.jpeg', features:['UV Resistant','Soft Texture','Low Maintenance','Natural Appearance'] },
+  { id:16, name:'PVC Carpet', category:'flooring', material:'pvc', application:'commercial', img:'images/pvc-carpet.jpeg', features:['Easy Clean','Water Resistant','Anti-Slip','Durable'] },
+  { id:18, name:'PVC Carpet - 4 MM', category:'flooring', material:'pvc', application:'commercial', img:'images/pvc-carpet-4mm.jpeg', features:['4mm Thickness','Extra Durable','Enhanced Comfort','Superior Grip'] },
+  { id:19, name:'Glass Film', category:'decor', material:'vinyl', application:'commercial', img:'images/glass-film.png', features:['Frosted Options','Privacy Protection','UV Blocking','Easy Application'] },
+  { id:20, name:'Soffit Panel', category:'exterior', material:'pvc', application:'outdoor', img:'images/soffit-panel.png', features:['Weather Resistant','Vented Options','Easy Installation','Multiple Colors'] },
+  { id:21, name:'PVC Flooring', category:'flooring', material:'pvc', application:'commercial', img:'images/pvc-flooring.jpeg', features:['100% Waterproof','Easy Maintenance','Anti-Skid','Cost Effective'] },
+  { id:22, name:'Artificial Grass', category:'exterior', material:'synthetic', application:'outdoor', img:'images/artificial-grass.png', features:['UV Resistant','Low Maintenance','Natural Look','Various Pile Heights'] },
 ];
 
 const PROJECTS = [
@@ -224,7 +224,7 @@ function ensureChatbotModal() {
       <button class="modal-close" onclick="closeChatbotModal()" aria-label="Close chatbot"><i class="fas fa-times"></i></button>
       <div class="chatbot-header">
         <div class="chatbot-avatar">
-          <img src="images/logo/small logo.png" alt="Rana Enterprises logo" onerror="this.onerror=null; this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend', '<i class=\'fas fa-robot\'></i>');">
+          <img src="images/logo/small-logo.png" alt="Rana Enterprises logo" onerror="this.onerror=null; this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend', '<i class=\'fas fa-robot\'></i>');">  
         </div>
         <div>
           <h3>Rana Assistant</h3>
