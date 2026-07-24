@@ -142,7 +142,13 @@ function applyFilters() {
 
 function sortProducts(val) {
   let sorted = [...PRODUCTS];
-  if (val === 'name') sorted.sort((a,b) => a.name.localeCompare(b.name));
+  if (val === 'name') {
+    sorted.sort((a,b) => a.name.localeCompare(b.name));
+  } else if (val === 'price-asc') {
+    sorted.sort((a,b) => (a.price || 0) - (b.price || 0));
+  } else if (val === 'price-desc') {
+    sorted.sort((a,b) => (b.price || 0) - (a.price || 0));
+  }
   renderAllProducts(sorted);
 }
 
