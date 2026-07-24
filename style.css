@@ -936,6 +936,12 @@ section { position:relative; }
   color: var(--white);
   margin-bottom: 6px;
 }
+.product-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
 .product-features {
   display: flex;
   flex-wrap: wrap;

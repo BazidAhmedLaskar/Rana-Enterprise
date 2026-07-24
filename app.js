@@ -2,25 +2,25 @@
    DATA
 ==========================================*/
 const PRODUCTS = [
-  { id:1, name:'3D Customized Wallpaper', category:'wall', material:'pvc', application:'residential', img:'images/3d-customized-wallpaper.jpeg', features:['3D Textured Surface','Waterproof','Impact Resistant','Easy Installation'] },
-  { id:2, name:'Charcoal Panel (128-160 MM)', category:'wall', material:'wpc', application:'residential', img:'images/Charcoal-panel/charcoal-panel.jpeg', features:['Deep Matte Finish','Eco-Friendly','Charcoal Coating','Premium Quality'] },
-  { id:3, name:'Charcoal Panels (300 MM)', category:'wall', material:'wpc', application:'residential', img:'images/Charcoal-panel/WhatsApp-Image-2026-05-27-at-2.11.35-PM.jpeg', features:['Wide 300mm Profile','Modern Look','Durable','Easy Maintenance'] },
-  { id:4, name:'Fluted Panel', category:'wall', material:'wpc', application:'residential', img:'', video:'images/fluted-panel.mp4', features:['3D Fluted Texture','Acoustic Properties','Impact Resistant','Lightweight'] },
-  { id:5, name:'UV Marble Sheet', category:'wall', material:'pvc', application:'residential', img:'images/uv-marble.jpeg', features:['High Gloss Finish','UV Protected','Seamless Joint','Scratch Resistant'] },
-  { id:6, name:'French Molding', category:'wall', material:'pvc', application:'residential', img:'images/french-molding.jpeg', features:['Classic Design','Decorative Appeal','Easy Installation','Multiple Profiles'] },
+  { id:1, name:'3D Customized Wallpaper', category:'wall', material:'pvc', application:'residential', price:120, img:'images/3d-customized-wallpaper.jpeg', features:['3D Textured Surface','Waterproof','Impact Resistant','Easy Installation'] },
+  { id:2, name:'Charcoal Panel (128-160 MM)', category:'wall', material:'wpc', application:'residential', price:150, img:'images/Charcoal-panel/charcoal-panel.jpeg', features:['Deep Matte Finish','Eco-Friendly','Charcoal Coating','Premium Quality'] },
+  { id:3, name:'Charcoal Panels (300 MM)', category:'wall', material:'wpc', application:'residential', price:180, img:'images/Charcoal-panel/WhatsApp-Image-2026-05-27-at-2.11.35-PM.jpeg', features:['Wide 300mm Profile','Modern Look','Durable','Easy Maintenance'] },
+  { id:4, name:'Fluted Panel', category:'wall', material:'wpc', application:'residential', price:130, img:'', video:'images/fluted-panel.mp4', features:['3D Fluted Texture','Acoustic Properties','Impact Resistant','Lightweight'] },
+  { id:5, name:'UV Marble Sheet', category:'wall', material:'pvc', application:'residential', price:160, img:'images/uv-marble.jpeg', features:['High Gloss Finish','UV Protected','Seamless Joint','Scratch Resistant'] },
+  { id:6, name:'French Molding', category:'wall', material:'pvc', application:'residential', price:95, img:'images/french-molding.jpeg', features:['Classic Design','Decorative Appeal','Easy Installation','Multiple Profiles'] },
  
-  { id:10, name:'PU Stone', category:'wall', material:'pvc', application:'residential', img:'images/pu-stone.jpeg', features:['Natural Stone Look','Lightweight','Textured Surface','Easy Application'] },
-  { id:11, name:'Wallpaper', category:'decor', material:'vinyl', application:'residential', img:'images/wallpaper.jpeg', features:['Various Patterns','Peel & Stick','Washable','Wide Variety'] },
-  { id:12, name:'Custom Wallpaper', category:'decor', material:'vinyl', application:'residential', img:'images/custom-wallpaper.jpeg', features:['Custom Design','High Quality Print','Durable','Easy Replace'] },
-  { id:13, name:'Roller Blind', category:'decor', material:'fabric', application:'residential', img:'images/roller-blind.jpeg', features:['Blackout Options','UV Protection','Custom Sizes','Smooth Operation'] },
-  { id:14, name:'Zebra Blind', category:'decor', material:'fabric', application:'residential', img:'images/zebra-blind.jpeg', features:['Day & Night Control','Light Filtering','Modern Design','Custom Sizes'] },
-  { id:15, name:'Arctic Pastel Grass', category:'exterior', material:'synthetic', application:'outdoor', img:'images/arctic-pastel-grass.jpeg', features:['UV Resistant','Soft Texture','Low Maintenance','Natural Appearance'] },
-  { id:16, name:'PVC Carpet', category:'flooring', material:'pvc', application:'commercial', img:'images/pvc-carpet.jpeg', features:['Easy Clean','Water Resistant','Anti-Slip','Durable'] },
-  { id:18, name:'PVC Carpet - 4 MM', category:'flooring', material:'pvc', application:'commercial', img:'images/pvc-carpet-4mm.jpeg', features:['4mm Thickness','Extra Durable','Enhanced Comfort','Superior Grip'] },
-  { id:19, name:'Glass Film', category:'decor', material:'vinyl', application:'commercial', img:'images/glass-film.png', features:['Frosted Options','Privacy Protection','UV Blocking','Easy Application'] },
-  { id:20, name:'Soffit Panel', category:'exterior', material:'pvc', application:'outdoor', img:'images/soffit-panel.png', features:['Weather Resistant','Vented Options','Easy Installation','Multiple Colors'] },
-  { id:21, name:'PVC Flooring', category:'flooring', material:'pvc', application:'commercial', img:'images/pvc-flooring.jpeg', features:['100% Waterproof','Easy Maintenance','Anti-Skid','Cost Effective'] },
-  { id:22, name:'Artificial Grass', category:'exterior', material:'synthetic', application:'outdoor', img:'images/artificial-grass.png', features:['UV Resistant','Low Maintenance','Natural Look','Various Pile Heights'] },
+  { id:10, name:'PU Stone', category:'wall', material:'pvc', application:'residential', price:140, img:'images/pu-stone.jpeg', features:['Natural Stone Look','Lightweight','Textured Surface','Easy Application'] },
+  { id:11, name:'Wallpaper', category:'decor', material:'vinyl', application:'residential', price:80, img:'images/wallpaper.jpeg', features:['Various Patterns','Peel & Stick','Washable','Wide Variety'] },
+  { id:12, name:'Custom Wallpaper', category:'decor', material:'vinyl', application:'residential', price:110, img:'images/custom-wallpaper.jpeg', features:['Custom Design','High Quality Print','Durable','Easy Replace'] },
+  { id:13, name:'Roller Blind', category:'decor', material:'fabric', application:'residential', price:200, img:'images/roller-blind.jpeg', features:['Blackout Options','UV Protection','Custom Sizes','Smooth Operation'] },
+  { id:14, name:'Zebra Blind', category:'decor', material:'fabric', application:'residential', price:220, img:'images/zebra-blind.jpeg', features:['Day & Night Control','Light Filtering','Modern Design','Custom Sizes'] },
+  { id:15, name:'Arctic Pastel Grass', category:'exterior', material:'synthetic', application:'outdoor', price:85, img:'images/arctic-pastel-grass.jpeg', features:['UV Resistant','Soft Texture','Low Maintenance','Natural Appearance'] },
+  { id:16, name:'PVC Carpet', category:'flooring', material:'pvc', application:'commercial', price:75, img:'images/pvc-carpet.jpeg', features:['Easy Clean','Water Resistant','Anti-Slip','Durable'] },
+  { id:18, name:'PVC Carpet - 4 MM', category:'flooring', material:'pvc', application:'commercial', price:95, img:'images/pvc-carpet-4mm.jpeg', features:['4mm Thickness','Extra Durable','Enhanced Comfort','Superior Grip'] },
+  { id:19, name:'Glass Film', category:'decor', material:'vinyl', application:'commercial', price:125, img:'images/glass-film.png', features:['Frosted Options','Privacy Protection','UV Blocking','Easy Application'] },
+  { id:20, name:'Soffit Panel', category:'exterior', material:'pvc', application:'outdoor', price:110, img:'images/soffit-panel.png', features:['Weather Resistant','Vented Options','Easy Installation','Multiple Colors'] },
+  { id:21, name:'PVC Flooring', category:'flooring', material:'pvc', application:'commercial', price:100, img:'images/pvc-flooring.jpeg', features:['100% Waterproof','Easy Maintenance','Anti-Skid','Cost Effective'] },
+  { id:22, name:'Artificial Grass', category:'exterior', material:'synthetic', application:'outdoor', price:65, img:'images/artificial-grass.png', features:['UV Resistant','Low Maintenance','Natural Look','Various Pile Heights'] },
 ];
 
 const PROJECTS = [
@@ -71,6 +71,7 @@ function productCard(p) {
     </div>
     <div class="product-body">
       <div class="product-name">${p.name}</div>
+      ${p.price ? `<div class="product-price">₹${p.price}/sqft</div>` : ''}
       <div class="product-features">${p.features.map(f=>`<span class="product-feature">${f}</span>`).join('')}</div>
       <div class="product-actions">
         <button class="btn-view" onclick="viewProduct('${p.name}')">Details</button>
@@ -142,13 +143,16 @@ function applyFilters() {
 
 function sortProducts(val) {
   let sorted = [...PRODUCTS];
+  
   if (val === 'name') {
-    sorted.sort((a,b) => a.name.localeCompare(b.name));
+    sorted.sort((a, b) => a.name.localeCompare(b.name));
   } else if (val === 'price-asc') {
-    sorted.sort((a,b) => (a.price || 0) - (b.price || 0));
+    sorted.sort((a, b) => (a.price || 0) - (b.price || 0));
   } else if (val === 'price-desc') {
-    sorted.sort((a,b) => (b.price || 0) - (a.price || 0));
+    sorted.sort((a, b) => (b.price || 0) - (a.price || 0));
   }
+  // Default stays as is
+  
   renderAllProducts(sorted);
 }
 
