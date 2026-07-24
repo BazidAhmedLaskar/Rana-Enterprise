@@ -24,10 +24,10 @@ const PRODUCTS = [
 ];
 
 const PROJECTS = [
-  { category:'residential', title:'Modern Living Room', material:'WPC Fluted Panels + LVT Flooring', img:'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80&auto=format' },
+  { category:'residential', title:'Modern Living Room', material:'WPC Fluted Panels + LVT Flooring', img:'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80&auto=format', video:'images/living room.mp4' },
   { category:'commercial', title:'Corporate Office Lobby', material:'PVC Grid Ceiling + Charcoal Louvers', img:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format' },
   { category:'residential', title:'Master Bedroom Makeover', material:'UV Marble Sheets + Vinyl Flooring', img:'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80&auto=format' },
-  { category:'office', title:'Tech Startup Office', material:'PVC Ceiling + WPC Wall Panels', img:'https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=600&q=80&auto=format' },
+  { category:'office', title:'Tech Startup Office', material:'PVC Ceiling + WPC Wall Panels', img:'images/tech-startup-office.jpeg' },
   { category:'showroom', title:'Luxury Retail Showroom', material:'Charcoal Louvers + LVT Tiles', img:'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80&auto=format' },
   { category:'residential', title:'Kitchen & Dining Area', material:'PVC Wall Panels + PVC Vinyl Roll', img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80&auto=format' },
   { category:'commercial', title:'Clinic Interior', material:'Seamless PVC Ceiling + Vinyl Roll', img:'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80&auto=format' },
@@ -160,7 +160,7 @@ function renderProjects(filter) {
   const items = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter);
   grid.innerHTML = items.map(p => `
     <div class="project-item">
-      <img src="${p.img}" alt="${p.title}" loading="lazy">
+      ${p.video ? `<video class="project-video" playsinline muted autoplay loop preload="metadata" poster="${p.img}" src="${p.video}" aria-label="${p.title}"></video>` : `<img src="${p.img}" alt="${p.title}" loading="lazy">`}
       <div class="project-item-overlay">
         <h4>${p.title}</h4>
         <p>${p.material}</p>
