@@ -166,15 +166,18 @@
     <div class="container">
       <div style="text-align:center;max-width:800px;margin:0 auto">
         <div class="section-label" style="justify-content:center">Design Resources</div>
-        <h2 class="section-title" style="margin-bottom:12px">Download Wallpaper <em>Design Catalog</em></h2>
+        <h2 class="section-title" style="margin-bottom:12px">Download Design <em>Catalogs</em></h2>
         <p style="color:rgba(248,244,238,0.78);margin-bottom:32px;font-size:0.95rem;line-height:1.8">
-          Get our comprehensive wallpaper and interior design catalog featuring all PVC wall panels, charcoal panels, fluted louvers, marble sheets, and flooring options. Perfect for architects, interior designers, and homeowners planning their next project.
+          Get our comprehensive design catalogs featuring wallpaper designs, 3D PVC panels, charcoal panels, fluted louvers, marble sheets, and flooring options. Perfect for architects, interior designers, and homeowners planning their next project.
         </p>
         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
           <a href="#" onclick="downloadCatalog('wallpaper'); return false;" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px">
-            <i class="fas fa-download"></i> Download Wallpaper Designs (PDF)
+            <i class="fas fa-download"></i> Download Wallpaper Designs
           </a>
-          <a href="https://wa.me/919265211720?text=I+want+the+wallpaper+designs+catalog" class="btn-outline" style="display:inline-flex;align-items:center;gap:8px" target="_blank" rel="noopener noreferrer">
+          <a href="#" onclick="downloadCatalog('3dpanel'); return false;" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px">
+            <i class="fas fa-download"></i> Download 3D Panel Designs
+          </a>
+          <a href="https://wa.me/919265211720?text=I+want+the+design+catalogs" class="btn-outline" style="display:inline-flex;align-items:center;gap:8px" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp"></i> Request via WhatsApp
           </a>
         </div>
@@ -371,14 +374,24 @@
   
   // Download catalog function
   function downloadCatalog(type) {
-    // Direct download of the wallpaper catalog PDF
-    const pdfUrl = 'PDF/SOHO_Image-only version.pdf';
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = 'Rana-Enterprises-Wallpaper-Designs.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    let pdfUrl, fileName;
+    
+    if (type === 'wallpaper') {
+      pdfUrl = 'PDF/SOHO_Image-only version.pdf';
+      fileName = 'Rana-Enterprises-Wallpaper-Designs.pdf';
+    } else if (type === '3dpanel') {
+      pdfUrl = 'PDF/4) TS DECOR 3D PVC PANEL-16.pdf';
+      fileName = 'Rana-Enterprises-3D-Panel-Designs.pdf';
+    }
+    
+    if (pdfUrl) {
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   }
 </script>
 </body>
