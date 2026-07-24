@@ -371,15 +371,14 @@
   
   // Download catalog function
   function downloadCatalog(type) {
-    // Create a message to user
-    const message = type === 'wallpaper' 
-      ? 'Wallpaper catalog download will be available soon. Please contact us on WhatsApp or call for the latest designs.' 
-      : 'Catalog download is currently being prepared.';
-    
-    alert(message);
-    
-    // Optionally redirect to contact or WhatsApp
-    // window.location.href = 'https://wa.me/919265211720?text=I+want+the+wallpaper+designs+catalog';
+    // Direct download of the wallpaper catalog PDF
+    const pdfUrl = 'PDF/SOHO_Image-only version.pdf';
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = 'Rana-Enterprises-Wallpaper-Designs.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 </script>
 </body>
