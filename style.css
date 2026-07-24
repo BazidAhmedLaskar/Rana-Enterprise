@@ -1734,6 +1734,56 @@ section { position:relative; }
 .calc-result-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 6px; }
 
 /* ==========================================
+   FAQ
+==========================================*/
+.faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--cream);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  color: var(--gold);
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+  content: '–';
+  transform: rotate(180deg);
+}
+
+.faq-item p {
+  margin-top: 12px;
+  color: rgba(248,244,238,0.78);
+  line-height: 1.7;
+}
+
+/* ==========================================
    FOOTER
 ==========================================*/
 footer {
