@@ -1,6 +1,6 @@
-# Rana Enterprises - Premium Interior Solutions Website
+# Rana Enterprise - Premium Interior Solutions Website
 
-A modern, luxury, fully responsive website for Rana Enterprises, specializing in PVC wall panels, WPC louvers, flooring systems, ceiling solutions, and turnkey interior services.
+A modern, luxury, fully responsive website for Rana Enterprise, specializing in PVC wall panels, WPC louvers, flooring systems, ceiling solutions, and turnkey interior services.
 
 ## 🌟 Features
 
@@ -155,10 +155,10 @@ docker run -p 80:80 rana-enterprise
 
 ## 📞 Contact
 
-**Rana Enterprises**
+**Rana Enterprise**
 - 📍 123 Business Avenue, Mumbai 400001
 - 📞 +91-9876-543-210
-- ✉️ info@ranaenterprises.com
+- ✉️ ranjitrana63351@gmail.com
 - GST: 27AABCT1234J1Z5
 
 ## 📈 Performance
@@ -192,12 +192,12 @@ Create new HTML file, include CSS/JS, update navbar
 
 ## 📄 License
 
-Proprietary to Rana Enterprises. All rights reserved.
+Proprietary to Rana Enterprise. All rights reserved.
 
 ## 🤝 Support
 
 For technical issues:
-- Email: dev@ranaenterprises.com
+- Email: ranjitrana63351@gmail.com
 - GitHub Issues
 
 ---

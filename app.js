@@ -117,7 +117,7 @@ document.addEventListener('click', event => {
 });
 
 function viewProduct(name) { alert(`📦 ${name}\nFull specification page coming soon. Please WhatsApp or call us for detailed specs and availability.`); }
-function quoteProduct(name) { window.open(`https://wa.me/919265211720?text=Hi+Rana+Enterprises%2C+I+would+like+a+quote+for:+${encodeURIComponent(name)}`,'_blank'); }
+function quoteProduct(name) { window.open(`https://wa.me/919265211720?text=Hi+Rana+Enterprise%2C+I+would+like+a+quote+for:+${encodeURIComponent(name)}`,'_blank'); }
 
 /* ==========================================
    FILTER & SORT
@@ -230,7 +230,7 @@ function ensureChatbotModal() {
       <button class="modal-close" onclick="closeChatbotModal()" aria-label="Close chatbot"><i class="fas fa-times"></i></button>
       <div class="chatbot-header">
         <div class="chatbot-avatar">
-          <img src="images/logo/small-logo.png" alt="Rana Enterprises logo" onerror="this.onerror=null; this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend', '<i class=\'fas fa-robot\'></i>');">  
+          <img src="images/logo/small-logo.png" alt="Rana Enterprise logo" onerror="this.onerror=null; this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend', '<i class=\'fas fa-robot\'></i>');">  
         </div>
         <div>
           <h3>Rana Assistant</h3>
@@ -377,7 +377,7 @@ function showCurrentChatbotQuestion() {
     const service = chatbotData.service || 'Interior service';
     const space = chatbotData.space || 'No additional details provided.';
     const contact = chatbotData.phone ? `\nContact: ${chatbotData.phone}` : '';
-    const message = `Hi Rana Enterprises! I need help with ${service}.\n\nDetails: ${space}${contact}`;
+    const message = `Hi Rana Enterprise! I need help with ${service}.\n\nDetails: ${space}${contact}`;
     closeChatbotModal();
     window.open(`https://wa.me/919265211720?text=${encodeURIComponent(message)}`, '_blank');
     return;
@@ -453,7 +453,7 @@ function submitForm() {
     if (!field || !field.value || field.value === 'Select Service...' || field.value === 'Select Branch...') return '';
     return `${label ? label.textContent.replace('*', '').trim() : 'Details'}: ${field.value}`;
   }).filter(Boolean).join('\n');
-  const message = `Hi Rana Enterprises, I would like to make an enquiry.${enquiry ? `\n\n${enquiry}` : ''}`;
+  const message = `Hi Rana Enterprise, I would like to make an enquiry.${enquiry ? `\n\n${enquiry}` : ''}`;
   closeModal();
   window.open(`https://wa.me/919265211720?text=${encodeURIComponent(message)}`, '_blank');
 }

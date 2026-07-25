@@ -1,8 +1,8 @@
-# 🚀 Rana Enterprises Website - Quick Start Guide
+# 🚀 Rana Enterprise Website - Quick Start Guide
 
 ## ✅ What's Been Built
 
-A **complete, production-ready premium website** for Rana Enterprises with 6 fully-designed pages and professional frontend infrastructure.
+A **complete, production-ready premium website** for Rana Enterprise with 6 fully-designed pages and professional frontend infrastructure.
 
 ## 📊 Project Summary
 
@@ -110,7 +110,7 @@ A **complete, production-ready premium website** for Rana Enterprises with 6 ful
 ```bash
 cd /workspaces/Rana-Enterprise
 git add .
-git commit -m "Add Rana Enterprises website"
+git commit -m "Add Rana Enterprise website"
 git push origin main
 # Then enable GitHub Pages in repository settings
 ```
@@ -308,7 +308,7 @@ The website is designed to easily connect with:
 Search for `+919876543210` and replace with your number
 
 ### Change Email
-Search for `info@ranaenterprises.com` and replace
+Search for `ranjitrana63351@gmail.com` and replace
 
 ### Change Address
 Update address in footer and contact page
